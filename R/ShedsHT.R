@@ -94,7 +94,7 @@ run = function(run.file="", wd="") {
       for (r in 1:nrow(fdat)) {
         bool  <- p.forms[,s]==r
         cform <- cdat[cdat$form==fdat$form[r]]
-        nids  <- max(cdat$form.id)
+        nids  <- max(cdat$product.id)              #VHULL- 2/23/2021 changed to product.id
         p.fids[bool,s] <- ceiling(nids*q1[bool])
       }
     }
@@ -1552,7 +1552,7 @@ food.residue = function(chem.ugg,cb,ftype,scens) {
   cbf  <- eval(parse(text=paste0("cb$",tolower(ftype))))
   if (!is.null(cbf)) diet <- diet + cbf*chem.ugg*scens$f.ingest
   # chem.ugg in [ug/g], food mass cbf in [g], result in [ug]
-  exp.ingest.dietary <<- diet
+  exp.ingest.dietary <- diet
   if(min(exp.ingest.dietary)<0) cat("\n Negative exposure dir.dietary")
   dietary  <- as.data.table(cbind(exp.dermal.dietary, exp.ingest.dietary,
                                   exp.inhal.dietary, dose.inhal.dietary))
@@ -1597,7 +1597,7 @@ food.migration = function(chem.ugg,cb,ftype,scens) {
   migrat            <- rep(0,n)
   names(migrat)     <- "exp.migrat"
   cbf  <- eval(parse(text=paste0("cb$",tolower(ftype))))
-  if (!is.null(cbf)) migrat <- migrat + cbf*chem.ugg*f.ingest
+  if (!is.null(cbf)) migrat <- migrat + cbf*chem.ugg*scens$f.ingest #VHULL - 03172021 added scens to f.ingest
   # chem.ugg [ug/g], food mass cbf [g], result [ug]
   exp.ingest.migrat <- migrat
   if(min(exp.ingest.migrat)<0) cat("\n Negative exposure food.migration")
