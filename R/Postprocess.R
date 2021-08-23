@@ -7,7 +7,7 @@
 #'
 #' @param out.file default="SHEDSOutFCS.csv"
 #'
-#' @param metrics the summary statistics to be pulled. default = c("5\%", "25\%", 50\%", "75\%", "95\%", "99\%","mean","sd")
+#' @param metrics the summary statistics to be pulled. default = c("5\%", "25\%", "50\%", "75\%", "95\%", "99\%","mean","sd")
 #'
 #' @return finaldata A R object that has "exp.dermal", "exp.ingest", m"exp.inhal", "dose.inhal", "dose.intake", "abs.dermal.ug",
 #'         "abs.ingest.ug", "abs.inhal.ug", "abs.tot.ug", "abs.tot.mgkg", "ddd.mass" for the chemical of question. This is tabulated for
@@ -25,7 +25,7 @@
 
 # Functions for postprocessing SHEDS-HT output files
 # All functions written by KKI
-# Last changes by WGG Aug 28, 2016
+# Last changes by VDH Jan 5 2021. Changed CAS to DTXSID
 
 combine_output = function(run.name=specs$run.name,out.file="SHEDSOutFCS.csv",metrics=c("5%","25%","50%","75%","95%","99%","mean","sd") ) {
 
@@ -66,7 +66,7 @@ combine_output = function(run.name=specs$run.name,out.file="SHEDSOutFCS.csv",met
       if (i==1) {
         datametric <- datametric[,!names(datametric) %in% c("X")]
         DTXSID        <- alldtxsid[j]
-        alldata    <- cbind(DTXSID, datametric[ ,!names(datametric) %in% c("DTXSID")])   #Just reorder to put CAS in front
+        alldata    <- cbind(DTXSID, datametric[ ,!names(datametric) %in% c("DTXSID")])   #Just reorder to put DTXSID in front
         setnames(alldata,names(alldata)[1],"DTXSID")
       } else {
         datametric <- datametric[,!names(datametric) %in% c("X", "Cohort")]        # Remove extraneous vars

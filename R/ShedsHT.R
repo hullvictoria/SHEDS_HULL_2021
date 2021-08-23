@@ -1,7 +1,7 @@
 # This is the main module of EPA's SHEDS-HT chemical exposure model.
 # This model is derived from SHEDS-Lite; before that SHEDS-Multimedia.
 # First R version programmed by WGG in 2012
-# Latest changes by WGG on Jan 13, 2020
+# Latest changes by VDH on Apr 15, 2021
 # To run SHEDS-HT, open this module in R or R-studio, source this module
 # and type run() to use the default run file "Run_test.txt",
 # or specify an alternate run file (in quotes) as an argument to run().
@@ -43,7 +43,8 @@ run = function(run.file="", wd="") {
   act.diaries   <- read.act.diaries(specs$act.diary.file,specs)
   chem.props    <- read.chem.props(specs$chem.props.file,specs)
   specs         <- update.specs(specs,chem.props)
-  diet.diaries  <- read.diet.diaries(specs$diet.diary.file,specs)
+  diet.demo     <- read.diet.demo(specs$diet.demo.file, specs)
+  diet.diaries  <- read.diet.diaries(specs$diet.diary.file,specs, diet.demo)
   exp.factors   <- read.exp.factors(specs$exp.factor.file)
   fug.vars      <- read.fug.inputs(specs$fugacity.file)
   media         <- read.media.file(specs$media.file)
@@ -81,20 +82,20 @@ run = function(run.file="", wd="") {
     puc.list  <- unique(source.scen$pucid)
     n.src     <- nrow(source.scen)
     n.pucs    <- length(puc.list)
-    # pick forms and form.ids
+    # pick forms and product.ids
     p.forms <- matrix(0,nrow=n.per,ncol=n.pucs)
     p.fids  <- matrix(0,nrow=n.per,ncol=n.pucs)
     for (s in 1:n.pucs) {
       src   <- puc.list[s]
       q1    <- runif(n.per)                                      # for picking form
-      q2    <- runif(n.per)                                      # for picking form.id
+      q2    <- runif(n.per)                                      # for picking product.id
       fdat  <- source.scen[pucid==src]
       cdat  <- source.chem[pucid==src]
       p.forms[,s] <- ceiling(nrow(fdat)*q1)
       for (r in 1:nrow(fdat)) {
         bool  <- p.forms[,s]==r
         cform <- cdat[cdat$form==fdat$form[r]]
-        nids  <- max(cdat$product.id)              #VHULL- 2/23/2021 changed to product.id
+        nids  <- max(cdat$product.id)              #VHULL- 2/23/2021 changed form.id to product.id
         p.fids[bool,s] <- ceiling(nids*q1[bool])
       }
     }
@@ -116,7 +117,7 @@ run = function(run.file="", wd="") {
     for (c in 1:specs$n.chem) {
       if(exists("fexp")) rm(fexp, inherits = TRUE)
       chem      <- specs$chem.list[c]
-      cb        <- make.cbase(base,chem)
+      cb        <<- make.cbase(base,chem)
       cprops    <- chem.props[chem.props$dtxsid==chem]
       cfug      <- chem.fug(n.per,cprops,fug.vars[1])
       schem     <- scv[scv$dtxsid==chem]
@@ -262,7 +263,7 @@ run = function(run.file="", wd="") {
           }
         } # end loop over sources
 
-        fexp   <- post.exposure(cb,cprops)
+        fexp   <<- post.exposure(cb,cprops)
         summarize.chemical(fexp,c,chem,cprops$chem.name,set,sets,specs)
         if (specs$person.output==1) write.persons(fexp,chem,set,specs)
         if (specs$source.output==1) {
@@ -387,6 +388,7 @@ setup = function(wd="") {
   library("stringr")
   library("dplyr")
   library("ggplot2")
+  library("tidyr")
 }
 
 #' act.diary.pools

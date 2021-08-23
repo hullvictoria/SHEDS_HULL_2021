@@ -2,6 +2,8 @@
 #'
 #' Each SHEDS run has its own "run.file" that the user prepares before the run.   This file contains all the settings and file references needed for the run.  Read.run.file occurs at the start of each SHEDS run.  The contents of the run.file are examined, and stored in the R object "specs".
 #'
+#' Last edits made by VDH on 04152021
+#'
 #' @export
 
 read.run.file = function(run.file="run_test.txt") {
@@ -21,6 +23,8 @@ read.run.file = function(run.file="run_test.txt") {
   set.size         <- 1000
   act.diary.file   <- "Activity_diaries.csv"
   chem.props.file  <- "Chem_props.csv"
+  #Read in diet demographics
+  diet.demo.file   <- "Diet_demo_0.csv"
   diet.diary.file  <- "Diet_diaries_0.csv"
   exp.factor.file  <- "Exp_factors.csv"
   fugacity.file    <- "Fugacity.csv"
@@ -57,6 +61,7 @@ read.run.file = function(run.file="run_test.txt") {
     if (str_trim(a$V1[i])=="act.diary.file")   act.diary.file   <- str_trim(a$V2[i])
     if (str_trim(a$V1[i])=="chem.props.file")  chem.props.file  <- str_trim(a$V2[i])
     if (str_trim(a$V1[i])=="diet.diary.file")  diet.diary.file  <- str_trim(a$V2[i])
+    if (str_trim(a$V1[i])=="diet.demo.file")   diet.demo.file   <- str_trim(a$V2[i])
     if (str_trim(a$V1[i])=="exp.factor.file")  exp.factor.file  <- str_trim(a$V2[i])
     if (str_trim(a$V1[i])=="fugacity.file")    fugacity.file    <- str_trim(a$V2[i])
     if (str_trim(a$V1[i])=="media.file")       media.file       <- str_trim(a$V2[i])
@@ -113,6 +118,7 @@ read.run.file = function(run.file="run_test.txt") {
   cat("act.diary.file   =",act.diary.file,"\n")
   cat("chem.props.file  =",chem.props.file,"\n")
   cat("diet.diary.file  =",diet.diary.file,"\n")
+  cat("diet.demo.file   =",diet.demo.file,"\n")
   cat("exp.factor.file  =",exp.factor.file,"\n")
   cat("fugacity.file    =",fugacity.file,"\n")
   cat("media.file       =",media.file,"\n")
@@ -139,6 +145,7 @@ read.run.file = function(run.file="run_test.txt") {
     act.diary.file   = act.diary.file,
     chem.props.file  = chem.props.file,
     diet.diary.file  = diet.diary.file,
+    diet.demo.file   = diet.demo.file,
     exp.factor.file  = exp.factor.file,
     fugacity.file    = fugacity.file,
     media.file       = media.file,
@@ -151,7 +158,6 @@ read.run.file = function(run.file="run_test.txt") {
     chem.list        = chem.list)
   return(s)
 }
-
 
 #' read.act.diaries
 #'
@@ -210,25 +216,46 @@ read.chem.props = function(filename,specs) {
   return(dt)
 }
 
-
-#' read.diet.diaries
+#' read.diet.demo
 #'
-#' Read.diet.diaries reads the food diaries from the .csv file indicated by "filename". "Specs" contains the run specifications from the run.file, and is used to subset the activity diaries by age and/or gender.
+#' Read.diet.demo reads the food demographics from the .csv file indicated by "filename". "Specs" contains the run specifications from the run.file, and is used to subset the activity diaries by age and/or gender.
 #'
 #' @export
-read.diet.diaries = function(filename,specs) {
+
+read.diet.demo = function(filename,specs) {
   # Read diet diary consumption input file
   dt <- fread(paste0("inputs/",filename),header=TRUE)
   # setnames(dt,5:ncol(dt),toupper(names(dt)[5:ncol(dt)]))
   setnames(dt,names(dt),tolower(names(dt)))
+  #V HULL - REMOVE - NOTE FOR SELF -> SHOULD THIS BE DONE BEFORE OR AFTER MERGE
   min.age     <- specs$min.age-round(specs$min.age*specs$age.match.pct/100)
   max.age     <- specs$max.age+round(specs$max.age*specs$age.match.pct/100)
   if(max.age==0 & specs$age.match.pct>0) max.age <- 1
   mode(dt$age) <- "numeric"
-  dd           <- dt[dt$age>=min.age & dt$age<=max.age & dt$gender %in% specs$genders]
-  setnames(dd,"age","f.age")
-  setnames(dd,"gender","f.gender")
-  dd[,diet.id:=1:nrow(dd)]
+  dde           <- dt[dt$age>=min.age & dt$age<=max.age & dt$gender %in% specs$genders]
+  setnames(dde,"age","f.age")
+  setnames(dde,"gender","f.gender")
+  cat(" Reading Dietary Demographics completed\n")
+  return(dde)
+}
+
+
+#' read.diet.diaries
+#'
+#' Read.diet.diaries reads the food diaries from the .csv file indicated by "filename". "Specs" contains the run specifications from the run.file, and is used to subset the activity diaries by age and/or gender.
+#' ddem specificies the diet demographics file
+#' @export
+
+read.diet.diaries = function(filename,specs, ddem) {
+  # Read diet diary consumption input file
+  di <- fread(paste0("inputs/",filename),header=TRUE)
+  # setnames(dt,5:ncol(dt),toupper(names(dt)[5:ncol(dt)]))
+  setnames(di,names(di),tolower(names(di)))
+  wide.diet <-pivot_wider(data = di, names_from = crop_group, values_from = crop_weight, values_fill = 0)
+  dd <- left_join(ddem, wide.diet, by = c("seqn"="seqn"))
+  cat("Demographics and Diet Diaries combined\n")
+  dd$diet.id = 1:nrow(dd)
+  #dd[,diet.id:=1:nrow(dd)]
   setkey(dd,diet.id)
   cat(" Reading Dietary Diaries completed\n")
   return(dd)
