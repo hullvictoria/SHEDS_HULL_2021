@@ -333,7 +333,7 @@ quantiles = function(x) {
   return(y)
 }
 
-#' summarize.chemcial
+#' summarize.chemical
 #'
 #' Summarize.chemical writes a .csv file containing a summary of the exposure and dose results from the object "x".
 #'

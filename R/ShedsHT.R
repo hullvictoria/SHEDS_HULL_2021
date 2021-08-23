@@ -383,6 +383,29 @@ setup = function(wd="") {
       and should not be construed to represent any Agency determination or policy.\n")
   if (wd!="") setwd(wd)
   suppressPackageStartupMessages(TRUE)
+  
+  #Install dependencies
+  
+  if (!("data.table" %in% rownames(installed.packages()))){
+    print("Installing data.table packages - required for SHEDS package")
+    install.packages("data.table")}
+  
+  if (!("stringr" %in% rownames(installed.packages()))){
+    print("Installing stringr packages - required for SHEDS package")
+    install.packages("stringr")}
+  
+  if (!("dplyr" %in% rownames(installed.packages()))){
+  print("Installing dplyr packages - required for SHEDS package")
+         install.packages("dplyr")}
+  
+  if (!("ggplot2" %in% rownames(installed.packages()))){
+    print("Installing ggplot2 packages - required for SHEDS package")
+    install.packages("ggplot2")}
+  
+  if (!("tidyr" %in% rownames(installed.packages()))){
+    print("Installing tidyr packages - required for SHEDS package")
+    install.packages("tidyr")}
+  
   # Load required packages
   library("data.table")
   library("stringr")
