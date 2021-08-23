@@ -562,9 +562,15 @@ unpack = function(filelist="") {
                   "run_artsandcrafts","run_food_residue","run_other_sources","run_products",
                   "source_chem_ac","source_chem_food","source_chem_products","source_chem_others",
                   "source_scen_food","source_scen_products","source_scen_others",
-                  "source_vars_products","source_vars_others","README","run_CPDat")
+                  "source_vars_products","source_vars_others", "source_vars_food", "README","run_CPDat")
   }
   inlib <- paste0(getwd(),"/inputs")
+
+  if (!dir.exists(inlib)) {
+    dir.create("inputs")
+    cat("\n inputs folder created in working directory.")
+  }
+
   if (dir.exists(inlib)) {
 
     for (i in 1:length(filelist)) {
@@ -579,9 +585,7 @@ unpack = function(filelist="") {
       #ExportDataTables(infile,inlib,csvfile)
     }
   }
-  if (!dir.exists(inlib)) {
-    cat("\n The Inputs directory does not exist in the SHEDS home directory. Unpack failed.")
-  }
+
 }
 #' vpos
 #'

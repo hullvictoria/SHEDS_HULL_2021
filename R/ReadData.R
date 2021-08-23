@@ -251,12 +251,13 @@ read.diet.diaries = function(filename,specs, ddem) {
   di <- fread(paste0("inputs/",filename),header=TRUE)
   # setnames(dt,5:ncol(dt),toupper(names(dt)[5:ncol(dt)]))
   setnames(di,names(di),tolower(names(di)))
-  wide.diet <-pivot_wider(data = di, names_from = crop_group, values_from = crop_weight, values_fill = 0)
-  dd <- left_join(ddem, wide.diet, by = c("seqn"="seqn"))
-  cat("Demographics and Diet Diaries combined\n")
+  di$foodgroup <- sub("^", "x.", di$foodgroup)
+  wide.diet <-tidyr::pivot_wider(data = di, names_from = foodgroup, values_from = foodweight, value_fill = 0) #Value_fill = 0 because that food was not eaten
+  dd <<- dplyr::inner_join(wide.diet, ddem, by = c("seqn"="seqn"))
+  cat(" Demographics and Diet Diaries combined\n")
   dd$diet.id = 1:nrow(dd)
   #dd[,diet.id:=1:nrow(dd)]
-  setkey(dd,diet.id)
+  setkey(as.data.table(dd),diet.id)
   cat(" Reading Dietary Diaries completed\n")
   return(dd)
 }

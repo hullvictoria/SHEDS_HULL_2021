@@ -143,8 +143,8 @@ run = function(run.file="", wd="") {
             q <- runif(n.per)
             chem.var[bool] <- distrib(sc[v]$dist.type,sc[v]$par1,sc[v]$par2,sc[v]$par3,sc[v]$par4,sc[v]$lower.trun,sc[v]$upper.trun,q=q[bool])
           }
-          chem.var <<- chem.var * has.chem                                       # zero out those cases without the chemical present
-          scens <<- source.scen[source.scen$pucid==src & source.scen$form==frm]
+          chem.var <- chem.var * has.chem                                       # zero out those cases without the chemical present
+          scens <- source.scen[source.scen$pucid==src & source.scen$form==frm]
           sdata <- as.data.table(src.data[vpos(src,puc.list),,])
           if (length(svar.list>0)) setnames(sdata,names(sdata),svar.list)
           io <- scens$indoor
@@ -1551,10 +1551,11 @@ food.residue = function(chem.ugg,cb,ftype,scens) {
   exp.dermal.dietary <- rep(0,n)
   diet               <- rep(0,n)
   names(diet)        <- "exp.diet"
-  cbf  <- eval(parse(text=paste0("cb$",tolower(ftype))))
+  x.ftype <- paste0("x.",ftype) #prevents parse issues if code is a number 
+  cbf  <- eval(parse(text=paste0("cb$", tolower((x.ftype)))))
   if (!is.null(cbf)) diet <- diet + cbf*chem.ugg*scens$f.ingest
   # chem.ugg in [ug/g], food mass cbf in [g], result in [ug]
-  exp.ingest.dietary <- diet
+  exp.ingest.dietary <<- diet
   if(min(exp.ingest.dietary)<0) cat("\n Negative exposure dir.dietary")
   dietary  <- as.data.table(cbind(exp.dermal.dietary, exp.ingest.dietary,
                                   exp.inhal.dietary, dose.inhal.dietary))
