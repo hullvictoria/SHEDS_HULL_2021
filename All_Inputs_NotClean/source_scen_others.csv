@@ -1,0 +1,4 @@
+source.type	pucid	form	description	indoor	dietary	migration	dirderm	diringest	dirinhaer	dirinhvap	downthedrain	indir.fug	indir.y0
+article	A.001	f1	Article 0011	1	0	0	0	0	0	0	0	0	1
+food	CG	f2	Food; CG Cereal Grains	1	1	1	0	0	0	0	0	0	0
+product	P.001	f3	Product 001	1	0	0	0	0	0	0	1	0	0
