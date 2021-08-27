@@ -1,0 +1,13 @@
+varname,dist.type,par1,par2,par3,par4,lower.trun,upper.trun,resamp,min.age,max.age,gender,season,media
+avail.f,point,0.5,,,,,,,,,,,
+dermal.abs.f,uniform,0.3,0.7,,,,,,,,,,
+dermal.tc,lognormal,250,1.93,,,,1000,,,,,,
+ingest.abs.f,uniform,0.4,0.8,,,,,,,,,,
+inhal.abs.f,point,0.16,,,,,,,,,,,
+k.absorb,normal,0.4,0.1,,,0,0.8,,,,,,
+k.brush,normal,1,0.3,,,0,2,,,,,,
+k.mouth,normal,1,0.2,,,0,2,,,,,,
+k.wash,normal,2,0.5,,,0,4,,,,,,
+om.ratio,triangle,0.001,0.004,0.002,,,,,0,5,,,
+om.ratio,triangle,1.00E-04,4.00E-04,2.00E-04,,,,,6,99,,,
+urine.f,uniform,0.3,0.7,,,,,,,,,,
