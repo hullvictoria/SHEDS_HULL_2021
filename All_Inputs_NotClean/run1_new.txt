@@ -1,0 +1,24 @@
+Variable,          Value
+run.name         = test
+n.persons        = 100
+person.output    = yes
+source.output    = yes
+min.age          = 0
+max.age          = 99
+genders          = FM 
+seasons          = PSFW 
+details          = 1
+age.match.pct    = 20
+run.seed         = 876144637
+set.size         = 10000
+act.diary.file   = Activity_diaries.csv
+chem.props.file  = new_chem_props.csv  
+diet.diary.file  = Diet_diaries.csv
+exp.factor.file  = exp_factors_dec.csv    
+fugacity.file    = Fugacity.csv     
+media.file       = Media.csv
+physiology.file  = new_physiology.csv
+population.file  = Population.csv  
+source.vars.file = source_vars_2.csv
+source.scen.file = source_scen_2.csv
+source.chem.file = hull_cpdat_id.csv

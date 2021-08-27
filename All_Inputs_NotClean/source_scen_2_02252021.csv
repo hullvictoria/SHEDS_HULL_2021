@@ -1,0 +1,773 @@
+source.type,pucid,product,form,prevalence,freq,indoor,dietary,migration,dirderm,diringest,dirinhaer,dirinhvap,downthedrain,indir.fug,indir.y0
+product,AC.0100.010,body paint,aerosol,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,AC.0100.010,body paint,gel,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,AC.0100.010,body paint,liquid,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,AC.0100.010,body paint,paste,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,AC.0100.010,body paint,pump spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,AC.0200.010,bubble solution,liquid,1,1,1,0,0,1,0,0,1,1,1,0
+product,AC.0200.020,crayons,solid,1,1,1,0,0,1,0,0,1,0,1,0
+product,AC.0200.030,finger paint,gel,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,AC.0200.030,finger paint,paste,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,AC.0200.040,modeling clay,solid,1,1,1,0,0,1,0,0,1,0,1,0
+product,AC.0300.010,fabric dye,powder,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,AC.0300.010,fabric dye,liquid,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,AC.0300.020,fabric paints and sealers,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,AC.0300.020,fabric paints and sealers,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,AC.0300.020,fabric paints and sealers,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,AC.0400.010,fogger,liquid,1,1,1,0,0,0,0,0,1,1,1,0
+product,AC.0500.010,arts and crafts adhesive,gel,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,AC.0500.010,arts and crafts adhesive,liquid,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,AC.0500.010,arts and crafts adhesive,paste,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,AC.0500.010,arts and crafts adhesive,pump spray,0.166666667,6,1,0,0,1,0,1,1,1,1,0
+product,AC.0500.010,arts and crafts adhesive,aerosol,0.166666667,6,1,0,0,1,0,1,1,1,1,0
+product,AC.0500.010,arts and crafts adhesive,hot melt,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,AC.0500.020,arts and crafts cleaner,gel,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,AC.0500.020,arts and crafts cleaner,liquid,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,AC.0500.030,arts and crafts finish,aerosol,0.5,2,1,0,0,1,0,1,1,1,1,0
+product,AC.0500.030,arts and crafts finish,liquid,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,AC.0500.040,arts and crafts paint,aerosol,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,AC.0500.040,arts and crafts paint,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,AC.0500.040,arts and crafts paint,solid,0.333333333,3,1,0,0,1,0,0,1,0,1,0
+product,AC.0500.050,craft kit,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,AC.0500.050,craft kit,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,AC.0500.050,craft kit,solid,0.333333333,3,1,0,0,1,0,0,1,0,1,0
+product,AC.0500.060,flocking,powder,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,AC.0500.060,flocking,aerosol,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,AC.0500.060,flocking,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,AC.0700.020,pens and markers,gel,0.5,2,1,0,0,1,0,0,1,0,1,0
+product,AC.0700.020,pens and markers,liquid,0.5,2,1,0,0,1,0,0,1,0,1,0
+product,AC.0700.030,white out,liquid,1,1,1,0,0,1,0,0,1,0,1,0
+product,AC.0800.010,glaze,aerosol,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,AC.0800.010,glaze,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,AC.0800.010,glaze,pump spray,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,CP.0100.010,air freshener,aerosol,0.166666667,6,1,0,0,1,0,1,1,0,1,0
+product,CP.0100.010,air freshener,pump spray,0.166666667,6,1,0,0,1,0,1,1,0,1,0
+product,CP.0100.010,air freshener,gel,0.166666667,6,1,0,0,1,0,0,1,0,1,0
+product,CP.0100.010,air freshener,liquid,0.166666667,6,1,0,0,1,0,0,1,0,1,0
+product,CP.0100.010,air freshener,solid,0.166666667,6,1,0,0,1,0,0,1,0,1,0
+product,CP.0200.010,bathroom cleaner,powder,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,CP.0200.010,bathroom cleaner,foam spray,0.166666667,6,1,0,0,1,0,1,1,1,1,0
+product,CP.0200.010,bathroom cleaner,aerosol,0.166666667,6,1,0,0,1,0,1,1,1,1,0
+product,CP.0200.010,bathroom cleaner,pump spray,0.166666667,6,1,0,0,1,0,1,1,1,1,0
+product,CP.0200.010,bathroom cleaner,gel,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,CP.0200.010,bathroom cleaner,liquid,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,CP.0300.010,carpet cleaner,liquid,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,CP.0300.010,carpet cleaner,aerosol,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,CP.0300.010,carpet cleaner,foam spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,CP.0300.010,carpet cleaner,pump spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,CP.0300.010,carpet cleaner,powder,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,CP.0300.020,carpet deodorizer,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.0300.020,carpet deodorizer,aerosol,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,CP.0300.020,carpet deodorizer,pump spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,CP.0300.020,carpet deodorizer,powder,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.0300.030,floor cleaner,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.0300.030,floor cleaner,wipes,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.0300.030,floor cleaner,pump spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,CP.0300.030,floor cleaner,powder,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.0300.040,floor polish,pump spray,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,CP.0300.040,floor polish,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,CP.0300.040,floor polish,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,CP.0400.020,automatic dishwashing additive,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,CP.0400.020,automatic dishwashing additive,pods,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,CP.0400.020,automatic dishwashing additive,powder,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,CP.0400.030,automatic dishwashing detergent,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,CP.0400.030,automatic dishwashing detergent,pods,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,CP.0400.030,automatic dishwashing detergent,powder,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,CP.0400.040,dish soap,liquid,1,1,1,0,0,1,0,0,1,1,1,0
+product,CP.0500.010,drain products,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,CP.0500.010,drain products,pods,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,CP.0500.010,drain products,powder,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,CP.0600.010,fireplace,aerosol,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,CP.0600.010,fireplace,liquid,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,CP.0600.010,fireplace,powder,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,CP.0600.010,fireplace,pump spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,CP.0600.010,fireplace,solid,0.2,5,1,0,0,1,0,0,1,0,1,0
+product,CP.0700.010,bleach,liquid,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,CP.0700.010,bleach,powder,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,CP.0700.020,disinfectant,aerosol,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,CP.0700.020,disinfectant,foam spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,CP.0700.020,disinfectant,liquid,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,CP.0700.020,disinfectant,pump spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,CP.0700.020,disinfectant,wipes,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,CP.0700.030,glass cleaner,liquid,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,CP.0700.030,glass cleaner,wipes,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,CP.0700.030,glass cleaner,aerosol,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,CP.0700.030,glass cleaner,pump spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,CP.0700.030,glass cleaner,powder,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,CP.0700.040,surface cleaner,powder,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,CP.0700.040,surface cleaner,aerosol,0.166666667,6,1,0,0,1,0,1,1,1,1,0
+product,CP.0700.040,surface cleaner,wipes,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,CP.0700.040,surface cleaner,liquid,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,CP.0700.040,surface cleaner,pump spray,0.166666667,6,1,0,0,1,0,1,1,1,1,0
+product,CP.0700.040,surface cleaner,foam spray,0.166666667,6,1,0,0,1,0,1,1,1,1,0
+product,CP.0800.010,hand cleaner,gel,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.0800.010,hand cleaner,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.0800.010,hand cleaner,powder,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.0800.010,hand cleaner,wipes,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.0900.010,heavy duty cleaner,liquid,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,CP.0900.010,heavy duty cleaner,powder,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,CP.1000.010,houseplant care,powder,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,CP.1000.010,houseplant care,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,CP.1000.010,houseplant care,pump spray,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,CP.1100.010,lamp oil/lighter fluid,liquid,1,1,1,0,0,1,0,0,1,1,1,0
+product,CP.1200.041,anti-static spray,aerosol,0.5,2,1,0,0,1,0,1,1,1,1,0
+product,CP.1200.041,anti-static spray,pump spray,0.5,2,1,0,0,1,0,1,1,1,1,0
+product,CP.1200.010,dry cleaner,liquid,1,1,1,0,0,1,0,0,1,1,1,0
+product,CP.1200.020,dryer sheets,impregnated sheets,1,1,1,0,0,1,0,0,1,0,1,0
+product,CP.1200.030,fabric deodorizer,aerosol,0.5,2,1,0,0,1,0,1,1,1,1,0
+product,CP.1200.030,fabric deodorizer,pump spray,0.5,2,1,0,0,1,0,1,1,1,1,0
+product,CP.1200.040,fabric protectant,aerosol,0.5,2,1,0,0,1,0,1,1,1,1,0
+product,CP.1200.040,fabric protectant,pump spray,0.5,2,1,0,0,1,0,1,1,1,1,0
+product,CP.1200.050,fabric softener,liquid,1,1,1,0,0,1,0,0,1,1,1,0
+product,CP.1200.060,laundry detergent,pods,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.1200.060,laundry detergent,powder,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.1200.060,laundry detergent,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.1200.060,laundry detergent,solid,0.25,4,1,0,0,1,0,0,1,0,1,0
+product,CP.1200.070,laundry fragrance,aerosol,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,CP.1200.070,laundry fragrance,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.1200.070,laundry fragrance,powder,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.1200.070,laundry fragrance,pump spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,CP.1200.080,laundry stain remover,gel,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.1200.080,laundry stain remover,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.1200.080,laundry stain remover,paste,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.1200.080,laundry stain remover,pump spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,CP.1200.090,laundry starch,aerosol,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,CP.1200.090,laundry starch,powder,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,CP.1200.090,laundry starch,pump spray,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,CP.1300.010,lime remover,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,CP.1300.010,lime remover,powder,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,CP.1300.010,lime remover,pump spray,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,CP.1400.010,metal polish,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,CP.1400.010,metal polish,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,CP.1400.010,metal polish,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,CP.1500.010,oven cleaner,aerosol,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,CP.1500.010,oven cleaner,gel,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.1500.010,oven cleaner,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.1500.010,oven cleaner,pump spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,CP.1600.010,shoe polish or protectant,aerosol,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,CP.1600.010,shoe polish or protectant,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.1600.010,shoe polish or protectant,paste,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.1600.010,shoe polish or protectant,pump spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,CP.1700.010,upholstery cleaner,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.1700.010,upholstery cleaner,aerosol,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,CP.1700.010,upholstery cleaner,foam spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,CP.1700.010,upholstery cleaner,pump spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,CP.1800.010,wood polish,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.1800.010,wood polish,aerosol,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,CP.1800.010,wood polish,pump spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,CP.1800.010,wood polish,paste,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,EL.0300.050,printer ink,cartridge,1,1,1,0,0,1,0,0,1,0,1,0
+product,EL.0300.060,printer toner,cartridge,1,1,1,0,0,1,0,0,1,0,1,0
+product,EL.0400.010,electronics cleaner,aerosol,0.5,2,1,0,0,1,0,1,1,1,1,0
+product,EL.0400.010,electronics cleaner,pump spray,0.5,2,1,0,0,1,0,1,1,1,1,0
+product,HM.0100.010,adhesive remover,aerosol,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,HM.0100.010,adhesive remover,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,HM.0100.010,adhesive remover,pump spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,HM.0100.010,adhesive remover,wipes,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,HM.0100.020,multipurpose adhesive,aerosol,0.166666667,6,1,0,0,1,0,1,1,1,1,0
+product,HM.0100.020,multipurpose adhesive,foam spray,0.166666667,6,1,0,0,1,0,1,1,1,1,0
+product,HM.0100.020,multipurpose adhesive,liquid,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,HM.0100.020,multipurpose adhesive,paste,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,HM.0100.020,multipurpose adhesive,pump spray,0.166666667,6,1,0,0,1,0,1,1,1,1,0
+product,HM.0100.020,multipurpose adhesive,two component,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,HM.0100.030,wood adhesive,aerosol,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,HM.0100.030,wood adhesive,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,HM.0100.030,wood adhesive,paste,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,HM.0100.030,wood adhesive,powder,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,HM.0400.010,caulk/sealant,liquid,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,HM.0400.010,caulk/sealant,paste,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,HM.0400.010,caulk/sealant,foam spray,0.25,4,0,0,0,1,0,1,1,0,0,0
+product,HM.0400.010,caulk/sealant,two component,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,HM.0500.010,concrete,liquid,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,HM.0500.010,concrete,paste,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,HM.0500.010,concrete,solid,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,HM.0500.010,concrete,two component,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,HM.0600.010,corrosion protection,aerosol,0.5,2,1,0,0,1,0,1,1,1,1,0
+product,HM.0600.010,corrosion protection,liquid,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,HM.0700.010,degreaser,aerosol,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,HM.0700.010,degreaser,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,HM.0700.010,degreaser,powder,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,HM.0800.010,wood finish,aerosol,0.5,2,1,0,0,1,0,1,1,1,1,0
+product,HM.0800.010,wood finish,liquid,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,HM.1000.010,spray foam,foam spray,1,1,1,0,0,1,0,1,1,0,1,0
+product,HM.1200.010,lock deicer,aerosol,0.333333333,3,0,0,0,1,0,1,1,0,0,0
+product,HM.1200.010,lock deicer,liquid,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,HM.1200.010,lock deicer,pump spray,0.333333333,3,0,0,0,1,0,1,1,0,0,0
+product,HM.1300.010,lubricant,gel,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,HM.1300.010,lubricant,liquid,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,HM.1300.010,lubricant,powder,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,HM.1300.010,lubricant,aerosol,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,HM.1300.010,lubricant,pump spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,HM.1400.011,oil-based paint,aerosol,0.5,2,1,0,0,1,0,1,1,1,1,0
+product,HM.1400.011,oil-based paint,liquid,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,HM.1400.010,paint,aerosol,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,HM.1400.010,paint,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,HM.1400.020,paint cleaner,liquid,1,1,1,0,0,1,0,0,1,1,1,0
+product,HM.1400.030,paint texture,gel,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,HM.1400.030,paint texture,liquid,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,HM.1400.040,paint thinner,liquid,1,1,1,0,0,1,0,0,1,1,1,0
+product,HM.1400.050,primer,aerosol,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,HM.1400.050,primer,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,HM.1400.060,stain,liquid,1,1,1,0,0,1,0,0,1,1,1,0
+product,HM.1400.070,stripper,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,HM.1400.070,stripper,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,HM.1400.070,stripper,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,HM.1400.012,water-based paint,aerosol,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,HM.1400.012,water-based paint,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,HM.1500.020,putty or filler,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,HM.1500.020,putty or filler,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,HM.1500.020,putty or filler,solid,0.333333333,3,1,0,0,1,0,0,1,0,1,0
+product,HM.1500.010,wall patch and repair,gel,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,HM.1500.010,wall patch and repair,paste,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,HM.1600.010,plumbing,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,HM.1600.010,plumbing,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,HM.1600.010,plumbing,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,HM.1700.010,refrigerant,gas,0.5,2,1,0,0,1,0,0,1,0,1,0
+product,HM.1700.010,refrigerant,liquid,0.5,2,1,0,0,1,0,0,1,0,1,0
+product,HM.1800.010,roof,liquid,0.5,2,0,0,0,1,0,0,1,0,0,0
+product,HM.1800.010,roof,paste,0.5,2,0,0,0,1,0,0,1,0,0,0
+product,HM.1900.010,septic system,liquid,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,HM.1900.010,septic system,powder,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,HM.1900.010,septic system,solid,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,HM.2000.010,glass surface sealer,aerosol,0.5,2,1,0,0,1,0,1,1,1,1,0
+product,HM.2000.010,glass surface sealer,liquid,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,HM.2000.030,stone surface sealer,aerosol,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,HM.2000.030,stone surface sealer,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,HM.2000.030,stone surface sealer,pump spray,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,HM.2000.040,surface sealer,aerosol,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,HM.2000.040,surface sealer,pump spray,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,HM.2000.040,surface sealer,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,HM.2100.010,grout sealer,pump spray,0.2,5,0,0,0,1,0,1,1,0,0,0
+product,HM.2100.010,grout sealer,aerosol,0.2,5,0,0,0,1,0,1,1,0,0,0
+product,HM.2100.010,grout sealer,gel,0.2,5,0,0,0,1,0,0,1,0,0,0
+product,HM.2100.010,grout sealer,liquid,0.2,5,0,0,0,1,0,0,1,0,0,0
+product,HM.2100.010,grout sealer,paste,0.2,5,0,0,0,1,0,0,1,0,0,0
+product,HM.2100.020,mortar or grout,paste,0.5,2,0,0,0,1,0,0,1,0,0,0
+product,HM.2100.020,mortar or grout,solid,0.5,2,0,0,0,1,0,0,1,0,0,0
+product,HM.2400.010,welding,solid,0.25,4,1,0,0,1,0,0,1,0,1,0
+product,HM.2400.010,welding,gas,0.25,4,1,0,0,1,0,0,1,0,1,0
+product,HM.2400.010,welding,gel,0.25,4,1,0,0,1,0,0,1,0,1,0
+product,HM.2400.010,welding,liquid,0.25,4,1,0,0,1,0,0,1,0,1,0
+product,LY.0100.010,cleaner,liquid,0.5,2,0,0,0,1,0,0,1,0,0,0
+product,LY.0100.010,cleaner,pump spray,0.5,2,0,0,0,1,0,1,1,0,0,0
+product,LY.0200.010,grill/camping fuel,liquid,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,LY.0200.010,grill/camping fuel,gas,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,LY.0200.010,grill/camping fuel,solid,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,LY.0300.010,herbicide,hose spray,0.25,4,0,0,0,1,0,1,1,0,0,0
+product,LY.0300.010,herbicide,liquid,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,LY.0300.010,herbicide,pump spray,0.25,4,0,0,0,1,0,1,1,0,0,0
+product,LY.0300.010,herbicide,solid,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,LY.0400.010,lawn fertilizer,hose spray,0.2,5,0,0,0,1,0,1,1,0,0,0
+product,LY.0400.010,lawn fertilizer,liquid,0.2,5,0,0,0,1,0,0,1,0,0,0
+product,LY.0400.010,lawn fertilizer,pump spray,0.2,5,0,0,0,1,0,1,1,0,0,0
+product,LY.0400.010,lawn fertilizer,solid,0.2,5,0,0,0,1,0,0,1,0,0,0
+product,LY.0500.010,lawnmower fluids,liquid,1,1,0,0,0,1,0,0,1,0,0,0
+product,LY.0600.010,garden care,liquid,0.5,2,0,0,0,1,0,0,1,0,0,0
+product,LY.0600.010,garden care,powder,0.5,2,0,0,0,1,0,0,1,0,0,0
+product,LY.0600.020,garden fertilizer,hose spray,0.25,4,0,0,0,1,0,1,1,0,0,0
+product,LY.0600.020,garden fertilizer,liquid,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,LY.0600.020,garden fertilizer,pump spray,0.25,4,0,0,0,1,0,1,1,0,0,0
+product,LY.0600.020,garden fertilizer,solid,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,LY.0600.030,mulch,solid,1,1,0,0,0,1,0,0,1,0,0,0
+product,LY.0600.040,potting soil,solid,1,1,0,0,0,1,0,0,1,0,0,0
+product,LY.0600.050,trees,aerosol,0.5,2,0,0,0,1,0,1,1,0,0,0
+product,LY.0600.050,trees,liquid,0.5,2,0,0,0,1,0,0,1,0,0,0
+product,LY.0700.010,ph control,liquid,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,LY.0700.010,ph control,powder,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,LY.0700.010,ph control,solid,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,LY.0700.020,pool algaecide,liquid,0.066666667,15,0,0,0,1,0,0,1,0,0,0
+product,LY.0700.020,pool algaecide,powder,0.066666667,15,0,0,0,1,0,0,1,0,0,0
+product,LY.0700.020,pool algaecide,solid,0.066666667,15,0,0,0,1,0,0,1,0,0,0
+product,LY.0700.030,pool chemicals - other,liquid,0.066666667,15,0,0,0,1,0,0,1,0,0,0
+product,LY.0700.030,pool chemicals - other,powder,0.066666667,15,0,0,0,1,0,0,1,0,0,0
+product,LY.0700.030,pool chemicals - other,solid,0.066666667,15,0,0,0,1,0,0,1,0,0,0
+product,LY.0700.040,pool chlorine,liquid,0.066666667,15,0,0,0,1,0,0,1,0,0,0
+product,LY.0700.040,pool chlorine,powder,0.066666667,15,0,0,0,1,0,0,1,0,0,0
+product,LY.0700.040,pool chlorine,solid,0.066666667,15,0,0,0,1,0,0,1,0,0,0
+product,LY.0700.050,shock,liquid,0.066666667,15,0,0,0,1,0,0,1,0,0,0
+product,LY.0700.050,shock,powder,0.066666667,15,0,0,0,1,0,0,1,0,0,0
+product,LY.0700.050,shock,solid,0.066666667,15,0,0,0,1,0,0,1,0,0,0
+product,LY.0800.010,surface deicer,liquid,0.5,2,0,0,0,1,0,0,1,0,0,0
+product,LY.0800.010,surface deicer,powder,0.5,2,0,0,0,1,0,0,1,0,0,0
+product,PC.0100.010,acne spot treatment,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.0100.010,acne spot treatment,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.0100.010,acne spot treatment,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.0100.020,face scrub,gel,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.0100.020,face scrub,paste,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.0100.030,face wash,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.0100.030,face wash,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.0100.030,face wash,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.0200.010,bite relief,gel,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.0200.010,bite relief,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.0200.010,bite relief,paste,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.0200.010,bite relief,pump spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,PC.0300.010,body adhesive,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.0300.010,body adhesive,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.0300.010,body adhesive,pump spray,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,PC.0400.010,body care set,aerosol,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PC.0400.010,body care set,gel,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.0400.010,body care set,liquid,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.0400.010,body care set,powder,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.0400.010,body care set,pump spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PC.0500.010,bar soap,solid,1,1,1,0,0,1,0,0,1,0,1,0
+product,PC.0500.020,body scrub,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.0500.020,body scrub,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.0500.020,body scrub,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.0500.030,body wash,foam spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,PC.0500.030,body wash,gel,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.0500.030,body wash,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.0500.030,body wash,paste,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.0500.040,body wipes,wipes,1,1,1,0,0,1,0,0,1,1,1,0
+product,PC.0500.050,hand sanitizer,gel,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.0500.050,hand sanitizer,liquid,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.0500.060,hand soap,gel,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.0500.060,hand soap,liquid,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.0500.070,hand wipes,wipes,1,1,1,0,0,1,0,0,1,1,1,0
+product,PC.0600.010,body oil,liquid,1,1,1,0,0,1,0,0,1,1,1,0
+product,PC.0700.010,body powder,powder,1,1,1,0,0,1,0,0,1,1,1,0
+product,PC.0800.010,baby lotion,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.0800.010,baby lotion,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.0800.010,baby lotion,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.0800.020,baby oil,liquid,1,1,1,0,0,1,0,0,1,1,1,0
+product,PC.0800.030,baby powder,powder,1,1,1,0,0,1,0,0,1,1,1,0
+product,PC.0800.040,baby shampoo,foam spray,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,PC.0800.040,baby shampoo,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.0800.040,baby shampoo,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.0800.050,baby wash,liquid,1,1,1,0,0,1,0,0,1,1,1,0
+product,PC.0800.060,baby wipes,wipes,1,1,1,0,0,1,0,0,1,1,1,0
+product,PC.0800.070,bath paints/crayons,gel,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.0800.070,bath paints/crayons,solid,0.5,2,1,0,0,1,0,0,1,0,1,0
+product,PC.0800.080,diaper cream,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.0800.080,diaper cream,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.0800.080,diaper cream,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.0900.030,denture adhesive,gel,0.25,4,1,0,0,1,1,0,1,1,1,0
+product,PC.0900.030,denture adhesive,paste,0.25,4,1,0,0,1,1,0,1,1,1,0
+product,PC.0900.030,denture adhesive,powder,0.25,4,1,0,0,1,1,0,1,1,1,0
+product,PC.0900.030,denture adhesive,solid,0.25,4,1,0,0,1,1,0,1,0,1,0
+product,PC.0900.040,denture cleaner,gel,0.2,5,1,0,0,1,1,0,1,1,1,0
+product,PC.0900.040,denture cleaner,liquid,0.2,5,1,0,0,1,1,0,1,1,1,0
+product,PC.0900.040,denture cleaner,paste,0.2,5,1,0,0,1,1,0,1,1,1,0
+product,PC.0900.040,denture cleaner,powder,0.2,5,1,0,0,1,1,0,1,1,1,0
+product,PC.0900.040,denture cleaner,solid,0.2,5,1,0,0,1,1,0,1,0,1,0
+product,PC.0900.050,mouthwash,liquid,1,1,1,0,0,1,1,0,1,1,1,0
+product,PC.0900.060,teeth whitener,gel,0.5,2,1,0,0,1,1,0,1,1,1,0
+product,PC.0900.060,teeth whitener,powder,0.5,2,1,0,0,1,1,0,1,1,1,0
+product,PC.0900.070,toothpaste,gel,0.333333333,3,1,0,0,1,1,0,1,1,1,0
+product,PC.0900.070,toothpaste,paste,0.333333333,3,1,0,0,1,1,0,1,1,1,0
+product,PC.0900.070,toothpaste,powder,0.333333333,3,1,0,0,1,1,0,1,1,1,0
+product,PC.1000.010,deodorant,aerosol,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PC.1000.010,deodorant,gel,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.1000.010,deodorant,liquid,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.1000.010,deodorant,paste,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.1000.010,deodorant,pump spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PC.1100.020,contact care,liquid,1,1,1,0,0,1,0,0,1,1,1,0
+product,PC.1100.030,eye cream,gel,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.1100.030,eye cream,paste,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.1100.040,eye drops,liquid,1,1,1,0,0,1,0,0,1,1,1,0
+product,PC.1100.050,eye lid spray,pump spray,1,1,1,0,0,1,0,1,1,1,1,0
+product,PC.1100.060,eye products,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1100.060,eye products,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1100.060,eye products,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1200.010,face cleansing wipes,wipes,1,1,1,0,0,1,0,0,1,1,1,0
+product,PC.1200.020,face cream/moisturizer,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1200.020,face cream/moisturizer,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1200.020,face cream/moisturizer,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1200.030,face mask,gel,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1200.030,face mask,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1200.030,face mask,paste,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1200.040,face scrub,gel,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.1200.040,face scrub,paste,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.1200.050,face wash,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1200.050,face wash,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1200.050,face wash,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1500.010,foot care,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1500.010,foot care,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1500.010,foot care,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1600.010,fragrance,aerosol,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PC.1600.010,fragrance,pump spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PC.1600.010,fragrance,gel,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.1600.010,fragrance,liquid,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.1600.010,fragrance,paste,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.1700.010,hand/body lotion,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1700.010,hand/body lotion,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1700.010,hand/body lotion,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1800.010,glitter,gel,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.1800.010,glitter,paste,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.010,hair bleach,gel,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.010,hair bleach,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.010,hair bleach,paste,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.010,hair bleach,powder,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.020,hair color,gel,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.020,hair color,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.020,hair color,paste,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.020,hair color,powder,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.030,hair color - permanent,gel,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.030,hair color - permanent,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.030,hair color - permanent,paste,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.030,hair color - permanent,powder,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.040,hair color - professional,gel,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.040,hair color - professional,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.040,hair color - professional,paste,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.040,hair color - professional,powder,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.050,hair color - temporary,gel,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.050,hair color - temporary,aerosol,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PC.1900.050,hair color - temporary,liquid,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.050,hair color - temporary,paste,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.050,hair color - temporary,powder,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.060,hair color activator,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.060,hair color activator,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.060,hair color activator,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.070,hair color developer,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.070,hair color developer,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.070,hair color developer,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.080,hair color toner,gel,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.080,hair color toner,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.080,hair color toner,paste,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1900.080,hair color toner,powder,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.070,dry shampoo,powder,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.070,dry shampoo,aerosol,0.5,2,1,0,0,1,0,1,1,1,1,0
+product,PC.2000.080,ethnic hair care,gel,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.080,ethnic hair care,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.080,ethnic hair care,paste,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.080,ethnic hair care,pump spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,PC.2000.090,hair conditioner,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.090,hair conditioner,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.090,hair conditioner,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.100,hair conditioner - leave-in,gel,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.100,hair conditioner - leave-in,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.100,hair conditioner - leave-in,paste,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.100,hair conditioner - leave-in,pump spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,PC.2000.110,hair conditioning treatment,gel,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.110,hair conditioning treatment,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.110,hair conditioning treatment,paste,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.110,hair conditioning treatment,pump spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,PC.2000.120,hair conditioning treatment - professional,gel,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.120,hair conditioning treatment - professional,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.120,hair conditioning treatment - professional,paste,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.120,hair conditioning treatment - professional,pump spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,PC.2000.130,hair relaxer,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.130,hair relaxer,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.130,hair relaxer,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.140,hair spray,aerosol,0.5,2,1,0,0,1,0,1,1,1,1,0
+product,PC.2000.140,hair spray,pump spray,0.5,2,1,0,0,1,0,1,1,1,1,0
+product,PC.2000.150,hair styling,foam,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.150,hair styling,gel,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.150,hair styling,liquid,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.150,hair styling,paste,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.150,hair styling,aerosol,0.166666667,6,1,0,0,1,0,1,1,1,1,0
+product,PC.2000.150,hair styling,pump spray,0.166666667,6,1,0,0,1,0,1,1,1,1,0
+product,PC.2000.180,lice shampoo,liquid,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.180,lice shampoo,pump spray,0.5,2,1,0,0,1,0,1,1,1,1,0
+product,PC.2000.190,scalp treatment,aerosol,0.166666667,6,1,0,0,1,0,1,1,1,1,0
+product,PC.2000.190,scalp treatment,gel,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.190,scalp treatment,liquid,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.190,scalp treatment,paste,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.190,scalp treatment,powder,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.190,scalp treatment,pump spray,0.166666667,6,1,0,0,1,0,1,1,1,1,0
+product,PC.2000.210,shampoo,foam spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PC.2000.210,shampoo,gel,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.210,shampoo,liquid,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.210,shampoo,paste,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.210,shampoo,powder,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.200,shampoo - dandruff,aerosol,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PC.2000.200,shampoo - dandruff,gel,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.200,shampoo - dandruff,liquid,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.200,shampoo - dandruff,paste,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2000.200,shampoo - dandruff,pump spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PC.2200.010,liniment,aerosol,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PC.2200.010,liniment,gel,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2200.010,liniment,liquid,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2200.010,liniment,paste,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2200.010,liniment,pump spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PC.2300.010,blush/bronzer,paste,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.010,blush/bronzer,powder,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.020,cosmetic tool cleaner,gel,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.020,cosmetic tool cleaner,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.020,cosmetic tool cleaner,paste,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.020,cosmetic tool cleaner,pump spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,PC.2300.030,eye liner,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.030,eye liner,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.030,eye liner,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.040,eye makeup,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.040,eye makeup,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.040,eye makeup,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.050,eye shadow,gel,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.050,eye shadow,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.050,eye shadow,paste,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.050,eye shadow,powder,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.060,face powder,powder,1,1,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.070,foundation/concealer,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.070,foundation/concealer,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.070,foundation/concealer,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.080,lip balm,gel,0.5,2,1,0,0,1,1,0,1,1,1,0
+product,PC.2300.080,lip balm,paste,0.5,2,1,0,0,1,1,0,1,1,1,0
+product,PC.2300.090,lip color,gel,0.5,2,1,0,0,1,1,0,1,1,1,0
+product,PC.2300.090,lip color,paste,0.5,2,1,0,0,1,1,0,1,1,1,0
+product,PC.2300.100,lip gloss,gel,0.5,2,1,0,0,1,1,0,1,1,1,0
+product,PC.2300.100,lip gloss,liquid,0.5,2,1,0,0,1,1,0,1,1,1,0
+product,PC.2300.110,lip liner,paste,1,1,1,0,0,1,1,0,1,1,1,0
+product,PC.2300.120,makeup primer,gel,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.120,makeup primer,liquid,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.120,makeup primer,paste,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.120,makeup primer,powder,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.120,makeup primer,pump spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PC.2300.130,makeup remover,aerosol,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PC.2300.130,makeup remover,gel,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.130,makeup remover,liquid,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.130,makeup remover,paste,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.130,makeup remover,pump spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PC.2300.140,makeup set,aerosol,0.166666667,6,1,0,0,1,0,1,1,1,1,0
+product,PC.2300.140,makeup set,gel,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.140,makeup set,liquid,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.140,makeup set,paste,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.140,makeup set,powder,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.140,makeup set,pump spray,0.166666667,6,1,0,0,1,0,1,1,1,1,0
+product,PC.2300.150,mascara,gel,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.150,mascara,liquid,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.160,toner,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.160,toner,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.160,toner,pump spray,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,PC.2400.010,nail adhesive,gel,1,1,1,0,0,1,0,0,1,1,1,0
+product,PC.2400.020,nail polish,aerosol,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,PC.2400.020,nail polish,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2400.020,nail polish,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2400.030,nail polish remover,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2400.030,nail polish remover,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2400.030,nail polish remover,wipes,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2400.040,other nail products,gel,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2400.040,other nail products,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2400.040,other nail products,paste,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2400.040,other nail products,powder,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2500.010,self-tanner,aerosol,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,PC.2500.010,self-tanner,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2500.010,self-tanner,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2600.010,sexual wellness,aerosol,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PC.2600.010,sexual wellness,gel,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2600.010,sexual wellness,liquid,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2600.010,sexual wellness,powder,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2600.010,sexual wellness,pump spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PC.2700.040,aftershave,pump spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,PC.2700.040,aftershave,gel,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2700.040,aftershave,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2700.040,aftershave,paste,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2700.050,clipper lubricant/cleaner,liquid,1,1,1,0,0,1,0,0,1,1,1,0
+product,PC.2700.060,depilatory,liquid,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2700.060,depilatory,aerosol,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PC.2700.060,depilatory,foam spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PC.2700.060,depilatory,gel,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2700.060,depilatory,paste,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PC.2700.070,shaving cream,foam,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2700.070,shaving cream,foam spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,PC.2700.070,shaving cream,gel,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2700.070,shaving cream,solid,0.25,4,1,0,0,1,0,0,1,0,1,0
+product,PC.2700.080,waxing,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2700.080,waxing,hot melt,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2700.080,waxing,paste,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2800.010,bath oil,liquid,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.2800.010,bath oil,pods,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.2800.020,bath salts,powder,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.2800.020,bath salts,solid,0.5,2,1,0,0,1,0,0,1,0,1,0
+product,PC.2800.030,bubble bath,gel,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2800.030,bubble bath,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2800.030,bubble bath,powder,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2800.030,bubble bath,solid,0.25,4,1,0,0,1,0,0,1,0,1,0
+product,PC.2900.010,sunscreen,aerosol,0.142857143,7,0,0,0,1,0,1,1,0,0,0
+product,PC.2900.010,sunscreen,foam spray,0.142857143,7,0,0,0,1,0,1,1,0,0,0
+product,PC.2900.010,sunscreen,gel,0.142857143,7,0,0,0,1,0,0,1,0,0,0
+product,PC.2900.010,sunscreen,liquid,0.142857143,7,0,0,0,1,0,0,1,0,0,0
+product,PC.2900.010,sunscreen,paste,0.142857143,7,0,0,0,1,0,0,1,0,0,0
+product,PC.2900.010,sunscreen,pump spray,0.142857143,7,0,0,0,1,0,1,1,0,0,0
+product,PC.2900.010,sunscreen,wipes,0.142857143,7,0,0,0,1,0,0,1,0,0,0
+product,PE.0100.010,animal repellent,gel,0.2,5,0,0,0,1,0,0,1,0,0,0
+product,PE.0100.010,animal repellent,liquid,0.2,5,0,0,0,1,0,0,1,0,0,0
+product,PE.0100.010,animal repellent,powder,0.2,5,0,0,0,1,0,0,1,0,0,0
+product,PE.0100.010,animal repellent,pump spray,0.2,5,0,0,0,1,0,1,1,0,0,0
+product,PE.0200.010,fungicide,aerosol,0.25,4,0,0,0,1,0,1,1,0,0,0
+product,PE.0200.010,fungicide,liquid,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,PE.0200.010,fungicide,powder,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,PE.0200.010,fungicide,pump spray,0.25,4,0,0,0,1,0,1,1,0,0,0
+product,PE.0300.010,insect repellent,aerosol,0.166666667,6,0,0,0,1,0,1,1,0,0,0
+product,PE.0300.010,insect repellent,gel,0.166666667,6,0,0,0,1,0,0,1,0,0,0
+product,PE.0300.010,insect repellent,liquid,0.166666667,6,0,0,0,1,0,0,1,0,0,0
+product,PE.0300.010,insect repellent,paste,0.166666667,6,0,0,0,1,0,0,1,0,0,0
+product,PE.0300.010,insect repellent,pump spray,0.166666667,6,0,0,0,1,0,1,1,0,0,0
+product,PE.0300.010,insect repellent,wipes,0.166666667,6,0,0,0,1,0,0,1,0,0,0
+product,PE.0300.030,insect repellent - skin,aerosol,0.25,4,0,0,0,1,0,1,1,0,0,0
+product,PE.0300.030,insect repellent - skin,liquid,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,PE.0300.030,insect repellent - skin,pump spray,0.25,4,0,0,0,1,0,1,1,0,0,0
+product,PE.0300.030,insect repellent - skin,wipes,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,PE.0400.010,insecticide,aerosol,0.142857143,8,1,0,0,1,0,1,1,1,1,0
+product,PE.0400.010,insecticide,gel,0.142857143,8,1,0,0,1,0,0,1,1,1,0
+product,PE.0400.010,insecticide,liquid,0.142857143,8,1,0,0,1,0,0,1,1,1,0
+product,PE.0400.010,insecticide,paste,0.142857143,8,1,0,0,1,0,0,1,1,1,0
+product,PE.0400.010,insecticide,powder,0.142857143,8,1,0,0,1,0,0,1,1,1,0
+product,PE.0400.010,insecticide,pump spray,0.142857143,8,1,0,0,1,0,1,1,1,1,0
+product,PE.0400.010,insecticide,trap,0.142857143,8,1,0,0,1,0,0,1,1,1,0
+product,PE.0500.010,rodenticide,aerosol,0.125,8,1,0,0,1,0,1,1,1,1,0
+product,PE.0500.010,rodenticide,gel,0.125,8,1,0,0,1,0,0,1,1,1,0
+product,PE.0500.010,rodenticide,liquid,0.125,8,1,0,0,1,0,0,1,1,1,0
+product,PE.0500.010,rodenticide,paste,0.125,8,1,0,0,1,0,0,1,1,1,0
+product,PE.0500.010,rodenticide,powder,0.125,8,1,0,0,1,0,0,1,1,1,0
+product,PE.0500.010,rodenticide,pump spray,0.125,8,1,0,0,1,0,1,1,1,1,0
+product,PE.0500.010,rodenticide,solid,0.125,8,1,0,0,1,0,0,1,0,1,0
+product,PE.0500.010,rodenticide,trap,0.125,8,1,0,0,1,0,0,1,1,1,0
+product,PT.0100.060,other pet treatments,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PT.0100.060,other pet treatments,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PT.0100.060,other pet treatments,pump spray,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,PT.0100.070,pesticide - pet,aerosol,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PT.0100.070,pesticide - pet,gel,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PT.0100.070,pesticide - pet,liquid,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PT.0100.070,pesticide - pet,paste,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PT.0100.070,pesticide - pet,pump spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PT.0100.080,pet shampoo,foam spray,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,PT.0100.080,pet shampoo,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PT.0100.080,pet shampoo,liquid,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PT.0100.090,pet stain cleaner,gel,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PT.0100.090,pet stain cleaner,liquid,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PT.0100.090,pet stain cleaner,foam spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PT.0100.090,pet stain cleaner,pump spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PT.0100.090,pet stain cleaner,aerosol,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PT.0200.010,cat litter,powder,0.5,2,1,0,0,1,0,0,1,0,1,0
+product,PT.0200.010,cat litter,solid,0.5,2,1,0,0,1,0,0,1,0,1,0
+product,PT.0400.010,aquarium,gas,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PT.0400.010,aquarium,liquid,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PT.0400.010,aquarium,powder,0.2,5,1,0,0,1,0,0,1,1,1,0
+product,PT.0400.010,aquarium,pump spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PT.0400.010,aquarium,solid,0.2,5,1,0,0,1,0,0,1,0,1,0
+product,SE.0300.020,bicycle cleaner,aerosol,0.25,4,0,0,0,1,0,1,1,0,0,0
+product,SE.0300.020,bicycle cleaner,gel,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,SE.0300.020,bicycle cleaner,liquid,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,SE.0300.020,bicycle cleaner,pump spray,0.25,4,0,0,0,1,0,1,1,0,0,0
+product,SE.0400.020,reel oil,aerosol,0.25,4,0,0,0,1,0,1,1,0,0,0
+product,SE.0400.020,reel oil,gel,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,SE.0400.020,reel oil,liquid,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,SE.0400.020,reel oil,pump spray,0.25,4,0,0,0,1,0,1,1,0,0,0
+product,SE.0600.010,gun cleaner,aerosol,0.333333333,3,0,0,0,1,0,1,1,0,0,0
+product,SE.0600.010,gun cleaner,liquid,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,SE.0600.010,gun cleaner,pump spray,0.333333333,3,0,0,0,1,0,1,1,0,0,0
+product,SE.0800.030,wax,aerosol,0.25,4,0,0,0,1,0,1,1,0,0,0
+product,SE.0800.030,wax,gel,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,SE.0800.030,wax,liquid,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,SE.0800.030,wax,solid,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,VE.0100.010,auto paint,liquid,0.5,2,0,0,0,1,0,0,1,0,0,0
+product,VE.0100.010,auto paint,aerosol,0.5,2,0,0,0,1,0,1,1,0,0,0
+product,VE.0100.020,body repair,gel,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,VE.0100.020,body repair,liquid,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,VE.0100.020,body repair,paste,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,VE.0100.030,detailing,aerosol,0.25,4,0,0,0,1,0,1,1,0,0,0
+product,VE.0100.030,detailing,gel,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,VE.0100.030,detailing,liquid,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,VE.0100.030,detailing,pump spray,0.25,4,0,0,0,1,0,1,1,0,0,0
+product,VE.0100.040,windows/windshield,aerosol,0.333333333,3,0,0,0,1,0,1,1,0,0,0
+product,VE.0100.040,windows/windshield,liquid,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,VE.0100.040,windows/windshield,pump spray,0.333333333,3,0,0,0,1,0,1,1,0,0,0
+product,VE.0200.010,boat cleaner - deck care,aerosol,0.333333333,3,0,0,0,1,0,1,1,0,0,0
+product,VE.0200.010,boat cleaner - deck care,liquid,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,VE.0200.010,boat cleaner - deck care,pump spray,0.333333333,3,0,0,0,1,0,1,1,0,0,0
+product,VE.0200.020,boat cleaner - general,aerosol,0.2,5,0,0,0,1,0,1,1,0,0,0
+product,VE.0200.020,boat cleaner - general,gel,0.2,5,0,0,0,1,0,0,1,0,0,0
+product,VE.0200.020,boat cleaner - general,liquid,0.2,5,0,0,0,1,0,0,1,0,0,0
+product,VE.0200.020,boat cleaner - general,paste,0.2,5,0,0,0,1,0,0,1,0,0,0
+product,VE.0200.020,boat cleaner - general,pump spray,0.2,5,0,0,0,1,0,1,1,0,0,0
+product,VE.0200.030,boat cleaner - hull care,aerosol,0.2,5,0,0,0,1,0,1,1,0,0,0
+product,VE.0200.030,boat cleaner - hull care,gel,0.2,5,0,0,0,1,0,0,1,0,0,0
+product,VE.0200.030,boat cleaner - hull care,liquid,0.2,5,0,0,0,1,0,0,1,0,0,0
+product,VE.0200.030,boat cleaner - hull care,paste,0.2,5,0,0,0,1,0,0,1,0,0,0
+product,VE.0200.030,boat cleaner - hull care,pump spray,0.2,5,0,0,0,1,0,1,1,0,0,0
+product,VE.0200.040,boat engine fluids,liquid,1,1,0,0,0,1,0,0,1,0,0,0
+product,VE.0300.010,auto air freshener,aerosol,0.166666667,6,0,0,0,1,0,1,1,0,0,0
+product,VE.0300.010,auto air freshener,gel,0.166666667,6,0,0,0,1,0,0,1,0,0,0
+product,VE.0300.010,auto air freshener,liquid,0.166666667,6,0,0,0,1,0,0,1,0,0,0
+product,VE.0300.010,auto air freshener,solid,0.166666667,6,0,0,0,1,0,0,1,0,0,0
+product,VE.0400.010,body cleaner,liquid,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,VE.0400.010,body cleaner,paste,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,VE.0400.010,body cleaner,pump spray,0.333333333,3,0,0,0,1,0,1,1,0,0,0
+product,VE.0400.020,body wax,liquid,0.5,2,0,0,0,1,0,0,1,0,0,0
+product,VE.0400.020,body wax,paste,0.5,2,0,0,0,1,0,0,1,0,0,0
+product,VE.0400.030,combination product,liquid,0.5,2,0,0,0,1,0,0,1,0,0,0
+product,VE.0400.030,combination product,paste,0.5,2,0,0,0,1,0,0,1,0,0,0
+product,VE.0400.040,degreaser,liquid,0.5,2,0,0,0,1,0,0,1,0,0,0
+product,VE.0400.040,degreaser,aerosol,0.5,2,0,0,0,1,0,1,1,0,0,0
+product,VE.0400.050,other,liquid,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,VE.0400.050,other,paste,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,VE.0400.050,other,pump spray,0.333333333,3,0,0,0,1,0,1,1,0,0,0
+product,VE.0500.010,antifreeze,liquid,1,1,0,0,0,1,0,0,1,0,0,0
+product,VE.0500.020,auto fluids and additives,aerosol,0.5,2,0,0,0,1,0,1,1,0,0,0
+product,VE.0500.020,auto fluids and additives,liquid,0.5,2,0,0,0,1,0,0,1,0,0,0
+product,VE.0500.030,auto lubricant,gel,0.5,2,0,0,0,1,0,0,1,0,0,0
+product,VE.0500.030,auto lubricant,liquid,0.5,2,0,0,0,1,0,0,1,0,0,0
+product,VE.0500.040,auto refrigerant,gas,1,1,0,0,0,1,0,0,1,0,0,0
+product,VE.0500.050,motor oil,liquid,1,1,0,0,0,1,0,0,1,0,0,0
+product,CP.0100.010,air freshener,candle,0.166666667,6,1,0,0,1,0,0,1,0,1,0
+product,HM.1400.010,paint,exterior,0.25,4,0,0,0,1,0,0,1,1,0,0
+product,HM.1400.010,paint,interior,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,HM.1400.012,water-based paint,foam spray,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,HM.1400.050,primer,foam spray,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,LY.0400.010,lawn fertilizer,granules,0.2,5,0,0,0,1,0,0,1,0,0,0
+product,PC.1200.030,face mask,solid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PE.0100.010,animal repellent,foam spray,0.2,5,0,0,0,1,0,1,1,0,0,0
+product,PE.0400.010,insecticide,granules,0.125,8,1,0,0,1,0,0,1,1,1,0
+product,VE.0300.010,auto air freshener,foam spray,0.166666667,6,0,0,0,1,0,1,1,0,0,0
+product,VE.0300.010,auto air freshener,in vehicle,0.166666667,6,0,0,0,1,0,0,1,0,0,0
+product,HM.1400.050,primer,interior,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,CP.1200.060,laundry detergent,foam spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,PC.0500.050,hand sanitizer,foam spray,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.0900.070,toothpaste,foam spray,0.333333333,3,1,0,0,1,1,0,1,1,1,0
+product,PC.0900.070,toothpaste,liquid,0.333333333,3,1,0,0,1,1,0,1,1,1,0
+product,PC.0900.070,toothpaste,child,0.333333333,3,1,0,0,1,1,0,1,1,1,0
+product,PC.1200.020,face cream/moisturizer,foam spray,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1600.010,fragrance,foam spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,PC.2000.150,hair styling,foam spray,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,PC.1000.010,deodorant,foam spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,VE.0100.030,detailing,foam spray,0.25,4,0,0,0,1,0,1,1,0,0,0
+product,PC.2300.080,lip balm,child,0.5,2,1,0,0,1,1,0,1,1,1,0
+product,PC.2300.090,lip color,liquid,0.5,2,1,0,0,1,1,0,1,1,1,0
+product,PE.0400.010,insecticide,foam spray,0.142857143,8,1,0,0,1,0,1,1,1,1,0
+product,VE.0100.010,auto paint,foam spray,0.5,2,0,0,0,1,0,0,1,0,0,0
+product,LY.0700.010,ph control,granules,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,HM.0100.010,adhesive remover,foam spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,LY.0700.010,ph control,foam spray,0.333333333,3,0,0,0,1,0,0,1,0,0,0
+product,CP.1500.010,oven cleaner,foam spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,HM.1400.010,paint,foam spray,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,CP.1200.060,laundry detergent,child,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.0500.030,body wash,aerosol,0.25,4,1,0,0,1,0,1,1,1,1,0
+product,PC.0500.060,hand soap,foam spray,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.2900.010,sunscreen,child,0.142857143,7,0,0,0,1,0,1,1,0,0,0
+product,CP.0100.010,air freshener,foam spray,0.166666667,6,1,0,0,1,0,1,1,0,1,0
+product,CP.1800.010,wood polish,foam spray,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PE.0300.010,insect repellent,foam spray,0.166666667,6,0,0,0,1,0,1,1,0,0,0
+product,PE.0300.030,insect repellent - skin,foam spray,0.25,4,0,0,0,1,0,1,1,0,0,0
+product,CP.0100.010,air freshener,in vehicle,0.166666667,6,1,0,0,1,0,1,1,0,1,0
+product,CP.0400.030,automatic dishwashing detergent,tablet,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,CP.0400.030,automatic dishwashing detergent,gel,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,CP.1200.080,laundry stain remover,powder,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.2800.020,bath salts,foam spray,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.2800.020,bath salts,liquid,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.090,lip color,foam spray,0.5,2,1,0,0,1,1,0,1,1,1,0
+product,PC.2300.100,lip gloss,foam spray,0.5,2,1,0,0,1,1,0,1,1,1,0
+product,AC.0500.040,arts and crafts paint,foam spray,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,LY.0400.010,lawn fertilizer,foam spray,0.2,5,0,0,0,1,0,1,1,0,0,0
+product,HM.1300.010,lubricant,foam spray,0.2,5,1,0,0,1,0,1,1,1,1,0
+product,VE.0500.020,auto fluids and additives,foam spray,0.5,2,0,0,0,1,0,0,1,0,0,0
+product,PC.1200.030,face mask,foam spray,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PC.1500.010,foot care,aerosol,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.1500.010,foot care,foam spray,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.0800.070,bath paints/crayons,liquid,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,CP.0300.030,floor cleaner,foam spray,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,HM.2100.010,grout sealer,foam spray,0.2,5,0,0,0,1,0,1,1,0,0,0
+product,SE.0600.010,gun cleaner,foam spray,0.333333333,3,0,0,0,1,0,1,1,0,0,0
+product,PC.2700.070,shaving cream,liquid,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.0400.030,automatic dishwashing detergent,foam spray,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PE.0300.010,insect repellent,candle,0.166666667,6,0,0,0,1,0,1,1,0,0,0
+product,PC.2800.030,bubble bath,foam spray,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,PE.0300.010,insect repellent,solid,0.166666667,6,0,0,0,1,0,1,1,0,0,0
+product,PC.2800.010,bath oil,foam spray,0.5,2,1,0,0,1,0,0,1,1,1,0
+product,PC.0200.010,bite relief,child,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,CP.1200.080,laundry stain remover,foam spray,0.25,4,1,0,0,1,0,0,1,1,1,0
+product,HM.0500.010,concrete,foam spray,0.25,4,0,0,0,1,0,0,1,0,0,0
+product,PC.2300.070,foundation/concealer,powder,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,HM.1400.050,primer,exterior,0.333333333,3,1,0,0,1,0,1,1,1,1,0
+product,AC.0500.010,arts and crafts adhesive,foam spray,0.166666667,6,1,0,0,1,0,0,1,1,1,0
+product,PC.0500.020,body scrub,foam spray,0.333333333,3,1,0,0,1,0,0,1,1,1,0
+product,PC.2300.100,lip gloss,aerosol,0.5,2,1,0,0,1,1,0,1,1,1,0
+product,PT.0100.070,pesticide - pet,foam spray,0.2,5,1,0,0,1,0,1,1,1,1,0
