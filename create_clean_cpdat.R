@@ -14,19 +14,22 @@
 ## As of 6/15/2021, I added in product_id to identify the distinct number of products that will be removed (not to be confused with product.id that is used by SHEDS)
 ## As of 6/23/2021, used updated the documents to be the most recent factotum download to fix attribute bug.
 ##          Also adding in chemical_id so that I can reference original release
+## As of 8/24/2021, I add prod_type and prod_title to help identify duplicates. Duplicates is defined as any product numbers for which the chemicals and SET of weight fractions is the same
+## As of 8/26/2021, I use the 8/25/2021 download. I also filter out duplicates. 
 
 ## ------------------------------- CODE SETUP ----------------------------------------------------------------------
-library(dplyr); library(tidyr); library(stringr)
+library(dplyr); library(tidyr); library(stringr); library(janitor)
 ##This is the reference file that Graham sent over
+source_chem_original <- read.csv("C:/Users/Administrator/OneDrive/Profile/Documents/SHEDS Project/SHEDSHTRPackage-master/Inputs/source_chem_products.csv")
 source_chem_example <- read.csv("C:/Users/Administrator/OneDrive/Profile/Documents/SHEDS Project/SHEDSDevel-ICF-DEVEL/Inputs/source_chem_5.csv" ,header=T)
 
 #Read in the various factotum documents
-chem_data<- read.csv("C:/Users/Administrator/OneDrive/Profile/Documents/Factotum Download/20210622_Data/chemical_dictionary_20210622.csv",header=T)
-puc_data<- read.csv("C:/Users/Administrator/OneDrive/Profile/Documents/Factotum Download/20210622_Data/PUC_dictionary_20210622.csv", header=T)
-weight_data.new<- read.csv("C:/Users/Administrator/OneDrive/Profile/Documents/Factotum Download/20210622_Data/product_composition_data_20210622.csv", header=T)
-weight_data.old<- read.csv("C:/Users/Administrator/OneDrive/Profile/Documents/Factotum Download/product_composition_data_20210128.csv", header=T)
+chem_data.august<- read.csv("C:/Users/Administrator/OneDrive/Profile/Documents/Factotum Download/CPDat_08252021/chemical_dictionary_2021-08-24.csv",header=T)
+puc_data.august<- read.csv("C:/Users/Administrator/OneDrive/Profile/Documents/Factotum Download/CPDat_08252021/PUC_dictionary_2021-08-24.csv", header=T)
+weight_data.august<- read.csv("C:/Users/Administrator/OneDrive/Profile/Documents/Factotum Download/CPDat_08252021/product_composition_data_2021-08-24.csv", header=T)
+#weight_data.old<- read.csv("C:/Users/Administrator/OneDrive/Profile/Documents/Factotum Download/product_composition_data_20210128.csv", header=T)
 
-form_dat <- read.csv("C:/Users/Administrator/OneDrive/Profile/Documents/Factotum Download/PUC_Defaults.csv", header = T)
+form_dat <- read.csv("C:/Users/Administrator/OneDrive/Profile/Documents/Factotum Download/PUC_Defaults.csv", header = T) #For importing form defaults if form is not reported
 
 #Check files to make sure I have the right data and nothing looks bizarre
 str(chem_data)
@@ -36,12 +39,15 @@ str(form_dat)
 
 ## -------------------------------- STEP 1: Clean weight fraction data ---------------------------------------------
 
+##Adding in row.id number in weight_data to make sure I'm not cleaning the same data twice
+weight_data.august <- weight_data.august %>% mutate(row.id = rownames(weight_data.august))
+
 #Start with minimum and maximum weight fractions. I only filter by minimum weight fraction here because both min AND max are 
 #necessary, and I will filter for missing max fractions later
-unclean <- weight_data.new %>%
-  filter(!is.na(raw_min_comp) & is.na(weight_data.new$clean_min_wf)) #If raw min comp is present and clean wf is not
+unclean.august <- weight_data.august %>%
+  filter(!is.na(raw_min_comp) & is.na(weight_data.august$clean_min_wf))#If raw min comp is present and clean wf is not
 ##Does the min/max weight fraction have any puncuation other than decimal, like >,<, or =? If yes, remove that data
-uncleanmin <- unclean %>%
+uncleanmin.august <- unclean.august %>%
   filter(str_detect(raw_min_comp, ">")) %>%
   filter(!str_detect(raw_max_comp, ">")) %>%
   mutate(raw_min_comp = str_replace(raw_min_comp, ">",""),
@@ -64,15 +70,15 @@ uncleanmin <- unclean %>%
          clean_max_wf = temp_max_comp) %>%
   select(-temp_min_comp, -temp_max_comp)
 ##Checks
-table(uncleanmin$clean_min_wf)
-table(uncleanmin$clean_max_wf)
+table(uncleanmin.august$clean_min_wf)
+table(uncleanmin.august$clean_max_wf)
 
 
-table(uncleanmin$temp_max_comp)
-table(uncleanmin$temp_min_comp)
+table(uncleanmin.august$temp_max_comp)
+table(uncleanmin.august$temp_min_comp)
 
-#Does the min/max weight fraction NOT have any punction? If so, you haven't dealt with it yet. Add .0 
-unclean.0 <- unclean %>% 
+#Does the min/max weight fraction NOT have any punctuaion? If so, you haven't dealt with it yet. Add .0 
+unclean.0.august <- unclean.august %>% 
   filter(!str_detect(raw_min_comp, "<"))%>%
   filter(!str_detect(raw_min_comp, ">"))%>%
   filter(!str_detect(raw_max_comp, "<"))%>%
@@ -83,6 +89,7 @@ unclean.0 <- unclean %>%
   filter(!str_detect(raw_min_comp, "\\+")) %>%
   filter(!str_detect(raw_max_comp,  "\\+")) %>%
   filter(!str_detect(raw_min_comp, "\\_")) %>%
+  filter(!str_detect(raw_min_comp, "\\.")) %>%
   #filter(str_detect(raw_min_comp, "\\.0$")) %>%
   #mutate(raw_min_comp = str_replace(raw_min_comp, "\\.0$",""),
   #raw_max_comp = str_replace(raw_max_comp, "\\.0$",""))%>%
@@ -97,8 +104,7 @@ unclean.0 <- unclean %>%
                                 (ifelse
                                  (nchar(raw_max_comp)==1, paste0(".0",raw_max_comp),
                                    NA)))) %>%
-mutate(
-  clean_min_wf = temp_min_comp,
+mutate(clean_min_wf = temp_min_comp,
   clean_max_wf = temp_max_comp) %>%
   select(-temp_min_comp, #Remove temporary storage columns
          -temp_max_comp) %>%
@@ -106,18 +112,18 @@ mutate(
 #%>%mutate(temp_max_comp = str_replace(raw_max_comp, "\\.2.","20"))
 
 #Checks
-table(unclean.0$raw_min_com)
-table(unclean.0$temp_min_compa)
-table(unclean.0$clean_min_wf)
+table(unclean.0.august$raw_min_com)
+table(unclean.0.august$temp_min_compa)
+table(unclean.0.august$clean_min_wf)
 
 
-table(unclean.0$raw_max_com)
-table(unclean.0$temp_max_compa)
-table(unclean.0$clean_max_wf)
+table(unclean.0.august$raw_max_com)
+table(unclean.0.august$temp_max_compa)
+table(unclean.0.august$clean_max_wf)
 
 
 ##Now look at the behavior of central weights
-uncleancentral <- weight_data.new %>%
+uncleancentral.august <- weight_data.august %>%
   filter(is.na(raw_min_comp) & is.na(clean_min_wf) & is.na(clean_max_wf) &
            is.na(clean_central_wf) &is.na(raw_max_comp)& !is.na(raw_central_comp)) %>%
   filter(!str_detect(raw_central_comp, "k")) %>%
@@ -131,27 +137,27 @@ uncleancentral <- weight_data.new %>%
   mutate(clean_central_wf = temp_central_comp) %>%
   select(-temp_central_comp)
 
-table(uncleancentral$raw_central_comp[which(nchar(uncleancentral$raw_central_comp)== 2)])
-table(uncleancentral$raw_central_comp[which(nchar(uncleancentral$raw_central_comp)== 1)])
-table(uncleancentral$temp_central_comp)
-table(uncleancentral$clean_central_wf)
+table(uncleancentral.august$raw_central_comp[which(nchar(uncleancentral.august$raw_central_comp)== 2)])
+table(uncleancentral.august$raw_central_comp[which(nchar(uncleancentral.august$raw_central_comp)== 1)])
+table(uncleancentral.august$temp_central_comp)
+table(uncleancentral.august$clean_central_wf)
 
 ##Combine clean weight_data to make weight_clean data frame
-weight_point_sub<- weight_data.new %>%
+weight_point_sub<- weight_data.august %>%
   filter(is.na(clean_min_wf) & is.na(clean_max_wf) & !is.na(clean_central_wf))
-weight_uniform_sub<- weight_data.new %>% 
+weight_uniform_sub<- weight_data.august %>% 
   filter(!is.na(clean_min_wf) & !is.na(clean_max_wf))
 
-weight_clean <- rbind(weight_point_sub, weight_uniform_sub, unclean.0, uncleancentral)
+weight_clean <- rbind(weight_point_sub, weight_uniform_sub, unclean.0.august, uncleancentral.august)
 
 stop()
 
 ## --------------------------------- STEP 2: Combine Factotum tables and clean data to create base cpdat files------------------------------------------------
 
 #Begin to create source chem
-cpdat_pi<-chem_data %>%
+cpdat_pi<-chem_data.august %>%
   left_join(weight_clean, by = c("chemical_id"="chemical_id"))%>% #Clean weight data from previous step
-  left_join(puc_data, by = c("puc_id" = "puc_id")) %>%
+  left_join(puc_data.august, by = c("puc_id" = "puc_id")) %>%
   left_join(form_dat, by = c("puc_code" ="PUCID")) %>%
   mutate(source.type = rep(paste("product"), length(nrow)),    #All same based on source_chem
          min.age = rep(0, length(nrow)),                       #All same based on source_chem
@@ -176,7 +182,9 @@ cpdat_pi<-chem_data %>%
          clean_max_wf,
          document_id, #Added temporarily to track down weird puc/form matches. Remove before final product! 
          product_id, #Added temporarily to track down weird puc/form matches. Remove before final product!   
-         chemical_id) #Added temporarily to match documents to official factotum download
+         chemical_id, #Added temporarily to match documents to official factotum download
+         prod_title, #Added temporarily to check for duplicates
+         prod_type) #Added temporarily
 
 ## --------------------------------- STEP 3: Use clean weight fractions to fill in par1, par2, and dist form -----------------------------------------------
 
@@ -198,7 +206,9 @@ cpdat_pi<-chem_data %>%
            par2 = clean_max_wf,
            document_id, #Added temporarily to track down weird puc/form matches. Remove before final product!
            product_id, #Added temporarily to track down weird puc/form matches. Remove before final product!
-           chemical_id) #Added temporarily to match to original factotum download
+           chemical_id, #Added temporarily to match to original factotum download
+           prod_title,
+           prod_type) 
 ##Do a quick check of NA's to make sure there aren't any values in central, as those would be point and not uniform.
 ##Also check to make sure there aren't any NAs in min or max, as we need all of those values present for uniform
 sum(is.na(cpdat_pi_uniform_sub$clean_min_wf))        #Check no NAs
@@ -224,7 +234,9 @@ sum(!is.na(cpdat_pi_uniform_sub$clean_central_wf))   #Check all NAs
            par2,
            document_id,
            product_id,
-           chemical_id)
+           chemical_id,
+           prod_title,
+           prod_type)
 
 ##Do a quick check of NA's to make sure there aren't any values in min and max, as those would be uniform and not point.
 ##Also check to make sure there aren't any NAs in central, as we need all of those values present 
@@ -244,19 +256,78 @@ cpdat_pi_new <-cpdat_pi_both %>% mutate(par3 = rep("", length(nrow)),
 
 str(cpdat_pi_new)
 
-##--------------------------------------STEP 5: Create a product.id (replacing the previous form.id) -------------------------
-#Create product.id
-cpdat_pi_id<- cpdat_pi_new %>%
+##--------------------------------------STEP 5: Drop unwanted forms and finish cleaning-------------------------------------
+
+cpdat_pi_cleanform <- cpdat_pi_new %>% 
   group_by(pucid, form, dtxsid) %>%
   mutate(product.id = seq(1:n()),
          form = str_trim(form))   %>%
   mutate(form = str_replace(form, "\\|", " ")) %>%
   mutate(form = str_replace(form, "pump$", "pump spray")) %>%
-  filter(form != "child", form != "exterior", form != "interior", form != "in vehicle")
-write.csv(cpdat_pi_id, "source_chem_cpdat_pi_id_document_06292021.csv")
+  filter(form != "child", form != "exterior", form != "interior", form != "in vehicle", form != "granules")
+
+stop()
+
+##Export list of new dtxsids for Kristin 
+#old.chems <- unique(source_chem_original$Chemical)
+#write.csv(old.chems, "old_chems.csv", row.names = F)
+#old.batchsearch <- read.csv("C:/Users/vhull/OneDrive - Environmental Protection Agency (EPA)/Profile/Downloads/CompToxChemicalsDashboard-Batch-Search_2021-08-26_15_23_04.csv")
+#old.castodtxsid <- unique(old.batchsearch$DTXSID)
+#old.dtxsid <- unique(source_chem_example$dtxsid)
+#new.chems <- unique(cpdat_pi_cleanform$dtxsid)
+
+#chems.needopera <- new.chems[which(!(new.chems %in% old.castodtxsid))]
+#write.csv(chems.needopera, "chemforshedsopera_08262021.csv", row.names = F)
+
+##--------------------------------------STEP 6: Check for and remove duplicates---------------------------------------------
+dup_check <- cpdat_pi_cleanform %>%
+  arrange(prod_title, dtxsid, product_id)
+dup_check$prod_title <- tolower(dup_check$prod_title)
+dup_check$prod_title <- trimws(dup_check$prod_title)
+
+dupprods_step1 <- dup_check %>%
+  mutate(indicator = paste0(prod_title, " ", dtxsid, " ", par1, " ", par2))
+
+##FIX THE THE ORDER SO ITS IDENTICAL 
+
+prod_titles <- unique(dupprods_step1$prod_title)
+product_number <- unique(dupprods_step1$product_id)
+mega.dup.dataframe <- NULL
+for(i in 1:length(product_number)){
+    dupprods_sub2 <- dupprods_sub1[dupprods_sub1$product_id == product_number[i],]
+    vectorindicator <- NULL
+    for(k in 1:nrow(dupprods_sub2)){
+      vectorindicator[k] <- dupprods_sub2$indicator[k] 
+    }
+    if(!is.na(vectorindicator)){
+      largeindicator <- toString(vectorindicator)
+      indprod <- cbind(largeindicator, product_number[j])
+      mega.dup.dataframe <- rbind(mega.dup.dataframe, indprod)
+    }
+  }
+mega.dup.dataframe <- as.data.frame(mega.dup.dataframe2)
 
 
-cat(paste0("there are ", length(which(duplicated(cpdat_pi_id$chemical_id) == TRUE)), " chemical_id repeats out of ", nrow(cpdat_pi_id), " rows"))
+
+##Only keep distinct "largeindicator" product numbers
+final.duplicated <- mega.dup.dataframe2 %>%
+  distinct(largeindicator, .keep_all = TRUE)
+
+##And finally, only keep product numbers  "large indicator products"
+
+cpdat_pi_nodup <- cpdat_pi_cleanform %>%
+  filter(product_id %in% final.duplicated$V2)
+
+
+##--------------------------------------STEP 7: Create a product.id (replacing the previous form.id) -------------------------
+#Create product.id
+cpdat_pi_id<- cpdat_pi_nodup%>%
+  relocate(product.id, .after = dtxsid) %>%
+  group_by(pucid, form, dtxsid) %>%
+  mutate(product.id = seq(1:n())) 
+  
+#write.csv(cpdat_pi_id, "source_chem_cpdat_08262021.csv", row.names = F)
+
 
 ##=========================================================== OLD CODE, SAVED FOR POSTERITY BUT NOT USED ==============================================
 
