@@ -16,6 +16,8 @@
 ##          Also adding in chemical_id so that I can reference original release
 ## As of 8/24/2021, I add prod_type and prod_title to help identify duplicates. Duplicates is defined as any product numbers for which the chemicals and SET of weight fractions is the same
 ## As of 8/26/2021, I use the 8/25/2021 download. I also filter out duplicates. 
+## As of 9/9/2021, I added in new weight cleaning scripts and also found some issues with the duplicates from when it was a standalone script
+## As of 9/9/2021, I also filter out DTXSIDs without OPERA predictions
 
 ## ------------------------------- CODE SETUP ----------------------------------------------------------------------
 library(dplyr); library(tidyr); library(stringr); library(janitor)
@@ -148,11 +150,302 @@ weight_point_sub<- weight_data.august %>%
 weight_uniform_sub<- weight_data.august %>% 
   filter(!is.na(clean_min_wf) & !is.na(clean_max_wf))
 
-weight_clean <- rbind(weight_point_sub, weight_uniform_sub, unclean.0.august, uncleancentral.august)
+weight_clean <- rbind(weight_point_sub, weight_uniform_sub, uncleanmin.august, unclean.0.august, uncleancentral.august)
+
+##Check for duplicates
+
+duplicated_weight <- length(which(duplicated(weight_clean$row.id) == TRUE))
+  if(length(duplicated_weight) > 0){cat("There are duplicated row.id's. You cleaned the same data twice. Check code /n")}
+  if(length(duplicated_weight) == 0){cat("There are no duplicated row.id's. The data can be written as a csv")}
+
+stop()
+#write.csv(weight_clean, "weight_clean_08262021.csv", row.names = F)
+
+## -------------Begin additional weight cleaning finished on 9/8/2021 - start is repetitive because I am combining two different scripts
+##Looked at location of decimal rather than number of characters 
+
+weight.clean <- weight_clean
+notcleaned.august <- weight_data.august[which(!weight_data.august$row.id %in% weight.clean$row.id),]
+notcleaned.august <- notcleaned.august %>% filter(!is.na(raw_min_comp) | !is.na(raw_max_comp) | !is.na(raw_central_comp))
+
+#clean weight MUST be NA
+if(length(which(!is.na(notcleaned.august$clean_central_wf)))>0 & length(which(!is.na(notcleaned.august$clean_central_wf)))>0 & length(which(!is.na(notcleaned.august$clean_central_wf)))>0){
+  cat("Contains clean data") 
+  stop()}
+
+##No decimal
+nomin <- notcleaned.august %>%
+  filter(!str_detect(raw_min_comp, "\\.")) %>%
+  filter(!str_detect(raw_min_comp, "[:alpha:]")) %>%
+  filter(!str_detect(raw_min_comp, "\\+")) %>%
+  filter(!str_detect(raw_min_comp, "_")) %>%
+  filter(!str_detect(raw_min_comp, "<")) %>%
+  mutate(raw_min_comp = str_replace(raw_min_comp, ">", ""),
+         raw_min_comp = str_replace(raw_min_comp, "=", ""))
+nomin$temp_min_comp <- NA
+nomin$temp_max_comp <- NA
+nomin$temp_central_comp <- NA
+for(i in 1:nrow(nomin)){
+  if(nchar(nomin$raw_min_comp[i]) == 1){
+    nomin$temp_min_comp[i] = paste0("0.0", nomin$raw_min_comp[i]) 
+  }
+  if(nchar(nomin$raw_min_comp[i]) == 2){
+    nomin$temp_min_comp[i] = paste0("0.", nomin$raw_min_comp[i]) 
+  }
+  if(str_detect(nomin$raw_min_comp[i], "100$")){
+    nomin$temp_min_comp[i] = "1.0"
+  }
+  #else{singlemin$raw_min_comp[i] = str_replace(singlemin$raw_min_comp[i], "\\.", "")
+  #singlemin$temp_min_comp[i] = paste0("0.", singlemin$raw_min_comp[i])}
+}
+table(nomin$raw_min_comp)
+table(nomin$temp_min_comp)
+
+nomax <- notcleaned.august %>%
+  filter(!str_detect(raw_max_comp, "\\.")) %>%
+  filter(!str_detect(raw_max_comp, "[:alpha:]")) %>%
+  filter(!str_detect(raw_max_comp, "\\+")) %>%
+  filter(!str_detect(raw_max_comp, "_")) %>%
+  filter(!str_detect(raw_max_comp, ">")) %>%
+  filter(!str_detect(raw_max_comp, "-")) %>%
+  filter(!str_detect(raw_max_comp, "%")) %>%
+  filter(!str_detect(raw_max_comp, "\\)")) %>%
+  filter(!str_detect(raw_max_comp, "\\*")) %>%
+  mutate(raw_max_comp = str_replace(raw_max_comp, "<", ""),
+         raw_max_comp = str_replace(raw_max_comp, "=", ""),
+         raw_max_comp = str_trim(raw_max_comp))
+nomax$temp_max_comp <- NA
+nomax$temp_min_comp <- NA
+nomax$temp_central_comp <- NA
+for(i in 1:nrow(nomax)){
+  if(nchar(nomax$raw_max_comp[i]) == 1){
+    nomax$temp_max_comp[i] = paste0("0.0", nomax$raw_max_comp[i]) 
+  }
+  if(nchar(nomax$raw_max_comp[i]) == 2){
+    nomax$temp_max_comp[i] = paste0("0.", nomax$raw_max_comp[i]) 
+  }
+  if(str_detect(nomax$raw_max_comp[i], "100$")){
+    nomax$temp_max_comp[i] = "1.0"
+  }
+  #else{singlemin$raw_min_comp[i] = str_replace(singlemin$raw_min_comp[i], "\\.", "")
+  #singlemin$temp_min_comp[i] = paste0("0.", singlemin$raw_min_comp[i])}
+}
+table(nomax$raw_max_comp)
+table(nomax$temp_max_comp)
+
+nocentral <- notcleaned.august %>%
+  filter(!str_detect(raw_central_comp, "\\.")) %>%
+  filter(!str_detect(raw_central_comp, "[:alpha:]")) %>%
+  filter(!str_detect(raw_central_comp, "\\+")) %>%
+  filter(!str_detect(raw_central_comp, "_")) %>%
+  filter(!str_detect(raw_central_comp, ">")) %>%
+  filter(!str_detect(raw_central_comp, "<")) %>%
+  filter(!str_detect(raw_central_comp, "=")) %>%
+  filter(!str_detect(raw_central_comp, "\\?")) %>%
+  filter(!str_detect(raw_central_comp, "@")) %>%
+  filter(!str_detect(raw_central_comp, "-")) %>%
+  filter(!str_detect(raw_central_comp, "%")) %>%
+  filter(!str_detect(raw_central_comp, "~")) %>%
+  filter(!str_detect(raw_central_comp, "\\)")) %>%
+  filter(!str_detect(raw_central_comp, "\\*")) %>%
+  filter(!str_detect(raw_central_comp, "\\[")) %>%
+  filter(!str_detect(raw_central_comp, "\\/")) %>%
+  mutate(raw_central_comp = str_replace(raw_central_comp, ",", "."),
+         #raw_central_comp = str_replace(raw_central_comp, "=", ""),
+         raw_central_comp = str_trim(raw_central_comp))
+nocentral$temp_central_comp <- NA
+nocentral$temp_min_comp <- NA
+nocentral$temp_max_comp <- NA
+for(i in 1:nrow(nocentral)){
+  if(str_detect(nocentral$raw_central_comp[i], "^0.")){
+    nocentral$temp_central_comp[i] = nocentral$raw_central_comp[i] 
+  }
+  if(nchar(nocentral$raw_central_comp[i]) == 1){
+    nocentral$temp_central_comp[i] = paste0("0.0", nocentral$raw_central_comp[i]) 
+  }
+  else{nocentral$raw_central_comp[i] = str_replace(nocentral$raw_central_comp[i], "\\.", "")
+  nocentral$temp_central_comp[i] = paste0("0.", nocentral$raw_central_comp[i])}
+}
+
+table(nocentral$raw_central_comp)
+table(nocentral$temp_central_comp)
+
+
+#------------------------------------------ One space before decimal ----------------------------------- 
+singlemin <- notcleaned.august %>%
+  filter(!str_detect(raw_min_comp, "<")) %>%
+  #filter(!str_detect(raw_min_comp, "0.10$")) %>%
+  filter(!str_detect(raw_min_comp, "[:alpha:]")) %>%
+  mutate(raw_min_comp = str_replace(raw_min_comp, ">", "")) %>%
+  filter(str_locate(raw_min_comp, "\\.") == 2)
+singlemin$temp_min_comp <- NA
+singlemin$temp_max_comp <- NA
+singlemin$temp_central_comp <- NA
+for(i in 1:nrow(singlemin)){
+  if(str_detect(singlemin$raw_min_comp[i], "^0")){
+    singlemin$temp_min_comp[i] = singlemin$raw_min_comp[i] 
+  }
+  else{singlemin$raw_min_comp[i] = str_replace(singlemin$raw_min_comp[i], "\\.", "")
+  singlemin$temp_min_comp[i] = paste0("0.", singlemin$raw_min_comp[i])}
+}
+
+table(singlemin$raw_min_comp)
+table(singlemin$temp_min_comp)
+
+singlemax <- notcleaned.august %>%
+  filter(!str_detect(raw_max_comp, ">")) %>%
+  #filter(!str_detect(raw_max_comp, "<")) %>%
+  
+  mutate(raw_max_comp = str_replace(raw_max_comp, "<", ""),
+         raw_max_comp = str_replace(raw_max_comp, "=", "")) %>%
+  filter(str_locate(raw_max_comp, "\\.") == 2)
+singlemax$temp_max_comp <- NA
+singlemax$temp_min_comp <- NA
+singlemax$temp_central_comp <- NA
+
+for(i in 1:nrow(singlemax)){
+  if(str_detect(singlemax$raw_max_comp[i], "^0")){
+    singlemax$temp_max_comp[i] = singlemax$raw_max_comp[i] 
+  }
+  else{singlemax$raw_max_comp[i] = str_replace(singlemax$raw_max_comp[i], "\\.", "")
+  singlemax$temp_max_comp[i] = paste0("0.", singlemax$raw_max_comp[i])}
+}
+
+##gotta check 1.0 and 1.00 for raw_max_comp
+
+table(singlemax$raw_max_comp)
+table(singlemax$temp_max_comp)
+
+
+singlecentral <- notcleaned.august %>%
+  filter(!str_detect(raw_central_comp, "[:alpha:]")) %>%
+  filter(!str_detect(raw_central_comp, "<")) %>%
+  filter(!str_detect(raw_central_comp, ">")) %>%
+  filter(!str_detect(raw_central_comp, "\\)")) %>%    
+  filter(!str_detect(raw_central_comp, "-")) %>%  
+  filter(!str_detect(raw_central_comp, "1.0$")) %>%  
+  filter(!str_detect(raw_central_comp, "0.0.1$")) %>%  
+  #mutate(raw_central_comp = str_replace(raw_central_comp, "<", ""),
+  #raw_central_comp = str_replace(raw_central_comp, "=", "")) %>%
+  filter(str_locate(raw_central_comp, "\\.") == 2)
+singlecentral$temp_central_comp <- NA
+singlecentral$temp_min_comp <- NA
+singlecentral$temp_max_comp <- NA
+
+for(i in 1:nrow(singlecentral)){
+  if(str_detect(singlecentral$raw_central_comp[i], "^0")){
+    singlecentral$temp_central_comp[i] = singlecentral$raw_central_comp[i] 
+  }
+  else{singlecentral$raw_central_comp[i] = str_replace(singlecentral$raw_central_comp[i], "\\.", "")
+  singlecentral$temp_central_comp[i] = paste0("0.", singlecentral$raw_central_comp[i])}
+}
+table(singlecentral$raw_central_comp)
+table(singlecentral$temp_central_comp)
+
+
+#-------------------------------- Two spaces before decimal -----------------------------------------
+doublemin <- notcleaned.august %>%
+  filter(!str_detect(raw_min_comp, "<")) %>%
+  mutate(raw_min_comp = str_replace(raw_min_comp, ">", "")) %>%
+  filter(str_locate(raw_min_comp, "\\.") == 3) %>%
+  mutate(temp_min_comp = str_replace(raw_min_comp, "\\.", "")) %>%
+  mutate(temp_min_comp = paste0("0.",temp_min_comp))
+doublemin$temp_max_comp <- NA
+doublemin$temp_central_comp <- NA
+
+doublemax <- notcleaned.august %>%
+  filter(!str_detect(raw_max_comp, ">")) %>%
+  mutate(raw_max_comp = str_replace(raw_max_comp, "<", "")) %>%
+  mutate(raw_max_comp = str_replace(raw_max_comp, "=", "")) %>%
+  mutate(temp_max_comp = raw_max_comp) %>%
+  filter(str_locate(raw_max_comp, "\\.") == 3) %>%
+  mutate(temp_max_comp = str_replace(raw_max_comp, "\\.", "")) %>%
+  mutate(temp_max_comp = paste0("0.",temp_max_comp))
+doublemax$temp_min_comp <- NA
+doublemax$temp_central_comp <- NA
+
+doublecentral <- notcleaned.august %>%
+  filter(!str_detect(raw_central_comp, ">")) %>%
+  filter(!str_detect(raw_central_comp, "<")) %>%
+  filter(!str_detect(raw_central_comp, "@")) %>%
+  filter(!str_detect(raw_central_comp, "_")) %>%
+  filter(!str_detect(raw_central_comp, "~")) %>%
+  filter(str_locate(raw_central_comp, "\\.") == 3) %>%
+  mutate(temp_central_comp = str_replace(raw_central_comp, "\\.", "")) %>%
+  mutate(temp_central_comp = paste0("0.", temp_central_comp))
+doublecentral$temp_max_comp <- NA
+doublecentral$temp_min_comp <- NA
+
+table(doublemin$raw_min_comp)
+table(doublemin$temp_min_comp)
+table(doublemax$raw_max_comp)
+table(doublemax$temp_max_comp)
+table(doublecentral$raw_central_comp)
+table(doublecentral$temp_central_comp)
+
+
+#--------------------------------- Three spaces before decimal - all nonsense so I drop it ------------
+triplemin <- notcleaned.august %>%
+  filter(!str_detect(raw_min_comp, "<")) %>%
+  mutate(raw_min_comp = str_replace(raw_min_comp, ">", "")) %>%
+  filter(str_locate(raw_min_comp, "\\.") == 4)
+table(triplemin$raw_min_comp)
+
+triplemax <- notcleaned.august %>%
+  filter(!str_detect(raw_max_comp, ">")) %>%
+  mutate(raw_max_comp = str_replace(raw_max_comp, "<", "")) %>%
+  filter(str_locate(raw_max_comp, "\\.") == 4)
+table(triplemax$raw_max_comp)
+
+triplecentral <- notcleaned.august %>%
+  filter(str_locate(raw_central_comp, "\\.") == 4)
+table(triplemax$raw_central_comp)
+
+#------------------- Join together all of these -----------------------------
+
+centralall <- rbind(nocentral, singlecentral, doublecentral) %>%
+  select(row.id,
+         temp_central_comp)
+length(which(duplicated(centralall$row.id)))
+
+minall <- rbind(doublemin, singlemin, nomin) %>%
+  select(row.id, temp_min_comp)
+length(which(duplicated(minall$row.id)))
+
+maxall <- rbind(doublemax, singlemax, nomax) %>%
+  select(row.id, temp_max_comp)
+length(which(duplicated(maxall$row.id)))
+
+minmaxall <- minall %>%
+  inner_join(maxall, by = c("row.id" = "row.id")) %>%
+  filter(temp_min_comp < temp_max_comp)
+
+
+#-------------------------Now add to data that was already cleaned --------------------------------
+
+cleanedaugust <- notcleaned.august %>%
+  left_join(centralall, by = ("row.id" = "row.id")) %>%
+  left_join(minmaxall, by = ("row.id" = "row.id")) %>%
+  mutate(clean_min_wf = temp_min_comp,
+         clean_max_wf = temp_max_comp,
+         clean_central_wf = temp_central_comp) %>%
+  filter(!is.na(clean_central_wf) | !is.na(clean_min_wf) | !is.na(clean_max_wf)) %>%
+  select(-temp_central_comp, -temp_max_comp, -temp_min_comp)
+
+cleanfinal <- rbind(weight_clean, cleanedaugust)
+
+#Final check for duplicated in clean data
+
+duplicated_weight_final <- length(which(duplicated(cleanfinal$row.id) == TRUE))
+if(length(duplicated_weight) > 1){cat("There are duplicated row.id's. You cleaned the same data twice. Check code /n")}
+if(length(duplicated_weight) <= 1){cat("There are no duplicated row.id's. The data can be written as a csv")}
 
 stop()
 
+write.csv(cleanfinal, "weight_clean_09082021.csv", row.names = F)
+
 ## --------------------------------- STEP 2: Combine Factotum tables and clean data to create base cpdat files------------------------------------------------
+weight_clean <- read.csv("weight_clean_09082021.csv")
 
 #Begin to create source chem
 cpdat_pi<-chem_data.august %>%
@@ -275,9 +568,14 @@ stop()
 #old.castodtxsid <- unique(old.batchsearch$DTXSID)
 #old.dtxsid <- unique(source_chem_example$dtxsid)
 #new.chems <- unique(cpdat_pi_cleanform$dtxsid)
+#old.cprops <- read.csv("C:/Users/Administrator/OneDrive/Profile/Documents/SHEDS Project/SHEDSHTRPackage-master/Inputs/chem_props.csv")
 
 #chems.needopera <- new.chems[which(!(new.chems %in% old.castodtxsid))]
-#write.csv(chems.needopera, "chemforshedsopera_08262021.csv", row.names = F)
+#chems.needopera2 <- new.chems[which(!(new.chems %in% old.cprops$DTXSID))]
+
+
+#write.csv(chems.needopera2, "chemforshedsopera2_09082021.csv", row.names = F)
+
 
 ##--------------------------------------STEP 6: Check for and remove duplicates---------------------------------------------
 dup_check <- cpdat_pi_cleanform %>%
@@ -294,23 +592,23 @@ prod_titles <- unique(dupprods_step1$prod_title)
 product_number <- unique(dupprods_step1$product_id)
 mega.dup.dataframe <- NULL
 for(i in 1:length(product_number)){
-    dupprods_sub2 <- dupprods_sub1[dupprods_sub1$product_id == product_number[i],]
+    dupprods_sub2 <- dupprods_step1[dupprods_step1$product_id == product_number[i],]
     vectorindicator <- NULL
     for(k in 1:nrow(dupprods_sub2)){
       vectorindicator[k] <- dupprods_sub2$indicator[k] 
     }
     if(!is.na(vectorindicator)){
       largeindicator <- toString(vectorindicator)
-      indprod <- cbind(largeindicator, product_number[j])
+      indprod <- cbind(largeindicator, product_number[i])
       mega.dup.dataframe <- rbind(mega.dup.dataframe, indprod)
     }
   }
-mega.dup.dataframe <- as.data.frame(mega.dup.dataframe2)
+mega.dup.dataframe <- as.data.frame(mega.dup.dataframe)
 
 
 
 ##Only keep distinct "largeindicator" product numbers
-final.duplicated <- mega.dup.dataframe2 %>%
+final.duplicated <- mega.dup.dataframe %>%
   distinct(largeindicator, .keep_all = TRUE)
 
 ##And finally, only keep product numbers  "large indicator products"
@@ -318,15 +616,35 @@ final.duplicated <- mega.dup.dataframe2 %>%
 cpdat_pi_nodup <- cpdat_pi_cleanform %>%
   filter(product_id %in% final.duplicated$V2)
 
+##--------------------------------------STEP 7: Filter out chemicals without OPERA predictions------------------------
 
-##--------------------------------------STEP 7: Create a product.id (replacing the previous form.id) -------------------------
+operapreds<-read.csv("C:/Users/vhull/OneDrive - Environmental Protection Agency (EPA)/Profile/Downloads/CompToxChemicalsDashboard-Batch-Search_2021-09-08_16_35_18.csv", na.string = "-")
+old.cprops <- read.csv("C:/Users/Administrator/OneDrive/Profile/Documents/SHEDS Project/SHEDSHTRPackage-master/Inputs/chem_props.csv")
+
+##List of chemicals Kristin needs to assess for chem_prop
+#haspreds <- operapreds %>%
+  #drop_na()
+#write.csv(haspreds2,"SHEDS_truenewopera_09082021.csv")
+
+#What chemicals do not have OPERA predictions and should be excluded?
+exclude_opera <- unique(operapreds$DTXSID[is.na(operapreds$ATMOSPHERIC_HYDROXYLATION_RATE_.AOH._CM3.MOLECULE.SEC_OPERA_PRED)])
+dtxsid.keep <- c(unique(old.cprops$DTXSID), exclude_opera)
+#check <- operapreds[is.na(operapreds$ATMOSPHERIC_HYDROXYLATION_RATE_.AOH._CM3.MOLECULE.SEC_OPERA_PRED),]
+
+
+# cpdat_operaexclude <- cpdat_pi_nodup[(cpdat_pi_nodup$dtxsid %in% dtxsid.keep),]
+cpdat_exclude <- cpdat_pi_nodup[!is.na(match(str_trim(tolower(cpdat_pi_nodup$dtxsid)), str_trim(tolower(dtxsid.keep)))),]
+
+#cpdatold_exclude <-source_chem_example[!is.na(match(str_trim(tolower(source_chem_example$dtxsid)), str_trim(tolower(dtxsid.keep)))),]
+
+##--------------------------------------STEP 8: Create a product.id (replacing the previous form.id) -------------------------
 #Create product.id
-cpdat_pi_id<- cpdat_pi_nodup%>%
+cpdat_pi_id<- cpdat_exclude %>%
   relocate(product.id, .after = dtxsid) %>%
   group_by(pucid, form, dtxsid) %>%
   mutate(product.id = seq(1:n())) 
   
-#write.csv(cpdat_pi_id, "source_chem_cpdat_08262021.csv", row.names = F)
+#write.csv(cpdat_pi_id, "source_chem_cpdat_09092021.csv", row.names = F)
 
 
 ##=========================================================== OLD CODE, SAVED FOR POSTERITY BUT NOT USED ==============================================
