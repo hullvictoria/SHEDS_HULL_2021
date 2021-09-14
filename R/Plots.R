@@ -10,14 +10,14 @@
 #'
 #'@param metrics argument is a vector of character strings with desired percentiles or metrics. default = c("50%, "95%, "mean)
 #'
-#'@param cohort.col vector of different cohorts. default = "Total". To add cohorts use a vector of character strings, such as cohort.col = c("Total", "Male", "Female")
+#'@param cohort.col agurment vector of different cohorts. default = "Total". To add cohorts use a vector of concatenated character strings, such as cohort.col = c("Total", "Male", "Female")
 #'
 #'@return a plot of output.variable vs chemical rank
 #'
-#'@details A SHEDS run creates an output file for each chemical. The SHEDS estimate "abs.tot.mgkg" is the dependent variable.
-#'Chemicals are ranked in ascending order of output.variable on the x axis. The y axis is log transformed. The default color is black with all
-#'cohorts represented.Percentiles must be calculated in SHEDS run. Each data point is a combination of dtxsid, the selected metrics, and
-#'the selected cohorts. Data is pulled from allstats output files.
+#'@details A SHEDS run creates an output file for each chemical. This plot pulls from the allstats.csv for each chemical in the output file.
+#'Chemicals are ranked in ascending order of output.variable on the x axis. The y axis is log transformed and a constant of 1e-10 added to y variable for
+#'log transformation of 0's. The default color is black for the "Total" cohort, but user can include as many cohorts as they wish as long as they are calculated in the SHEDS run.
+#'Percentiles must be calculated in SHEDS run.the selected cohorts.
 #'
 #'@export
 #'
@@ -126,19 +126,20 @@ allstats.variable.rank.plot<- function(run.name=specs$run.name, output.variable 
 }
 
 #' puc.rank.plot is a ggplot scatter plot with desired srcMeans variable on the y axis and chemical rank on the x axis.
-#' User can change y axis using output.variable argument. User can either plot the individual product or the higher level puc using the combine argument.
-#' Data comes from all_srcMeans output file, so data points are mean output.variable.
+#' The dependent variable on the y axis can be changed using output.variable argument, but only one output variable can be plotted at a time.
+#' User can either plot the individual product or the higher level puc using the combine argument. Data comes from all_srcMeans output file, so data points are the mean for that output varaible.
 #'
 #'@param run.name default = name of last run (in current R session)
 #'
 #'@param output.variable argument is a single character string. default = "exp.dermal".
 #'
-#'@param combine true or false statement that dictates whether to plot each product or combine them so that each data point is a higher level product.
+#'@param combine true or false statement that dictates whether to plot each product or combine them so that each data point is a higher level product. default = FALSE
 #'
 #'@return a plot of output.variable vs chemical rank with a legend for color and shape
 #'
-#'@details A SHEDS run creates an output file for each chemical. The y axis is log transformed. Constant of 1e-10
-#' added to y variable for log transformation
+#'@details A SHEDS run creates an output file for each chemical. This plot pulls from the srcMeans.csv for each chemical in the output file.
+#'Chemicals are ranked in ascending order of output.variable on the x axis. The y axis is log transformed and a constant of 1e-10 added to y variable for
+#'log transformation of 0's. The plot colors points by higher level PUC.
 #'
 #'@export
 
@@ -225,20 +226,18 @@ puc.rank.plot <- function(run.name, output.variable = "exp.dermal", combine = FA
   }
 
 
-#'puc.boxplot is a ggplot boxplot of mean output.variable. The y-axis for each row is the selected output variable and the x-axis is higher-level PUC.
-#'User can select multiple different output variables using the output.variables. Data comes from srcAll output file, so data points are mean output.variable.
-#'The user can plot multiple different pathways.
+#'puc.boxplot is a ggplot boxplot of one or multiple srcMeans variables. The y-axis for each row is the selected output variable and the x-axis is higher-level PUC.
+#'User can select multiple different output variables using the argument output.variables. Data comes from srcMeans output file, so data points are mean output.variable.
+#'The user can plot multiple different pathways and each row of boxplots is a different variable
 #'
 #'@param run.name default = name of last run (in current R session)
 #'
-#'@param output.variables argument is a concatenated character string. default = NULL plots total output.variable. Can use "exp.total"
-#'or "f.total" to plot summation of three available pathways for mean output.variable (g/day) and mean fraction of house chemical mass, respectively.
-#'exp.total is calculated as the sum of the exp.dermal, exp.inhal, and exp.ingest pathways. f.total is calculated as
+#'@param output.variables argument is a concatenated vector of character strings. c("exp.dermal", "exp.ingest", "exp.inhal")
 #'
-#'@return a boxplot of output.variable with a legend for color and shape
+#'@return a boxplot of output.variable vs higher level PUC
 #'
-#'@details A SHEDS run creates an output file for each chemical. The y axis is log transformed. Like puc.rank.plot, each product
-#'is considered to be a data plot
+#'@details A SHEDS run creates an output file for each chemical. This plot pulls from the srcMeans.csv for each chemical in the output file. The y axis is log transformed and a constant of 1e-10 added to y variable for
+#'log transformation of 0's.
 #'
 #'@export
 
@@ -312,21 +311,19 @@ puc.boxplot <- function(run.name, output.variables = c("exp.dermal", "exp.ingest
 
 #' puc.dtxsid
 #'
-#' puc.dtxsid is a ggplot tool that plots mean output.variable (ug/day) for puc ids across specific chemicals.
+#' puc.dtxsid is a ggplot tool that plots mean output.variable for puc ids across specific chemicals.
 #'
 #' @param run.name default = name of last run (in current R session)
 #'
-#' @param dtxsid character string of desired chemicals. default = NULL, which plots all of the chemicals. We recommend not using this default for
-#' runs with more than 6 chemicals.
+#' @param dtxsid character string of desired chemicals. default = NULL, which plots the first 6 chemicals in the folder. If user wants to add a list of chemicals, use the format dtxsid=c("DTXSID1029621","DTXSID204455","DTXSID9021269"))
+#' User cannot exceed 6 chemicals.
 #'
-#' @param output.variable argument is a concatenated character string of desired output.variables. Can plot as many output.variables as you want at once as long as they are in the file.
+#' @param output.variables argument is a concatenated vector of character strings. default = c("exp.dermal", "exp.ingest", "exp.inhal")
 #'
 #' @return plot of mean output.variable for provided dtxsids
 #'
-#' @detail Pulls data from the all_srcmeans.csv outputs that are generated by a SHEDS run. The dependent variable, mean output.variable, is the sum of
-#' is sum of columns exp.dermal, exp.inhal, and exp.ingest.
-#'
-#' @example puc.dtxsid(run.name="test", dtxsid=c("DTXSID1029621","DTXSID2044555","DTXSID9021269"))
+#' @detail Pulls data from the all_srcmeans.csv outputs that are generated by a SHEDS run. A SHEDS run creates an output file for each chemical. This plot pulls from the srcMeans.csv for each chemical in the output file. The y axis is log transformed and a constant of 1e-10 added to y variable for
+#'log transformation of 0's.
 #'
 #' @import ggplot dplyr tidyr stringr
 #'
