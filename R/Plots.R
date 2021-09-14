@@ -1,29 +1,29 @@
-#'output.variable.rank.plot
+#'allstats.variable.rank.plot
 #'
-#'output.variable.rank.plot is a ggplot scatter plot with output.variable (mg/kg) on the y axis and chemical rank on the x axis.
+#'allstats.variable.rank.plot is a ggplot scatter plot with output.variable on the y axis and chemical rank on the x axis.
 #'User can color points by cohort (see "cohort.col" argument) and assign percentiles to be points (see "metrics" argument)
 #'
 #'
 #'@param run.name default = name of last run (in current R session)
 #'
-#'@param output.variable
+#'@param output.variable default = abs.tot.mgkg (mg/kg/day).
 #'
 #'@param metrics argument is a vector of character strings with desired percentiles or metrics. default = c("50%, "95%, "mean)
 #'
-#'@param cohort.col vector of different cohorts. default = "Total"
+#'@param cohort.col vector of different cohorts. default = "Total". To add cohorts use a vector of character strings, such as cohort.col = c("Total", "Male", "Female")
 #'
 #'@return a plot of output.variable vs chemical rank
 #'
 #'@details A SHEDS run creates an output file for each chemical. The SHEDS estimate "abs.tot.mgkg" is the dependent variable.
 #'Chemicals are ranked in ascending order of output.variable on the x axis. The y axis is log transformed. The default color is black with all
-#'cohorts represented.'Percentiles must be calculated in SHEDS run. Each data point is a combination of dtxsid, the selected metrics, and
+#'cohorts represented.Percentiles must be calculated in SHEDS run. Each data point is a combination of dtxsid, the selected metrics, and
 #'the selected cohorts. Data is pulled from allstats output files.
 #'
 #'@export
 #'
 #'@import dplyr
 
-output.variable.rank.plot<- function(run.name=specs$run.name, output.variable = "abs.tot.mgkg" , metrics = c("50%", "95%", "mean"), cohort.col = "Total") {
+allstats.variable.rank.plot<- function(run.name=specs$run.name, output.variable = "abs.tot.mgkg" , metrics = c("50%", "95%", "mean"), cohort.col = "Total") {
   allfiles   <-list.files(path=paste0("output/",run.name), all.files=FALSE, include.dirs=FALSE, full.names=TRUE)
 
    if(length(allfiles)<1){
@@ -223,15 +223,15 @@ puc.rank.plot <- function(run.name, output.variable = "exp.dermal", combine = FA
       scale_colour_manual(values = cbpalette)
   print(puc.path.plot)
   }
-}
 
-#'puc.boxplot is a ggplot boxplot of mean output.variable (mg/kg).
-#'User can add shape based on output.variable pathway. Data comes from srcAll output file, so data points are mean output.variable.
+
+#'puc.boxplot is a ggplot boxplot of mean output.variable. The y-axis for each row is the selected output variable and the x-axis is higher-level PUC.
+#'User can select multiple different output variables using the output.variables. Data comes from srcAll output file, so data points are mean output.variable.
 #'The user can plot multiple different pathways.
 #'
 #'@param run.name default = name of last run (in current R session)
 #'
-#'@param output.variable argument is a concatenated character string. default = NULL plots total output.variable. Can use "exp.total"
+#'@param output.variables argument is a concatenated character string. default = NULL plots total output.variable. Can use "exp.total"
 #'or "f.total" to plot summation of three available pathways for mean output.variable (g/day) and mean fraction of house chemical mass, respectively.
 #'exp.total is calculated as the sum of the exp.dermal, exp.inhal, and exp.ingest pathways. f.total is calculated as
 #'
@@ -242,7 +242,7 @@ puc.rank.plot <- function(run.name, output.variable = "exp.dermal", combine = FA
 #'
 #'@export
 
-puc.boxplot <- function(run.name, output.variable = c("exp.dermal", "exp.ingest", "exp.inhal")){
+puc.boxplot <- function(run.name, output.variables = c("exp.dermal", "exp.ingest", "exp.inhal")){
   allfiles   <-list.files(path=paste0("output/",run.name), all.files=FALSE, include.dirs=FALSE, full.names=TRUE)
 
   if(length(allfiles)<1){
@@ -283,22 +283,22 @@ puc.boxplot <- function(run.name, output.variable = c("exp.dermal", "exp.ingest"
 
   #Create graph of output.variable level by PUC
   puc.path.data<-data.frame()
-  for(i in 1:length(output.variable)){
+  for(i in 1:length(output.variables)){
       expframe <- puc.level1 %>%
-        mutate(exp.pathway = rep(paste0(output.variable[i]), length(nrow))) %>%
+        mutate(exp.pathway = rep(paste0(output.variables[i]), length(nrow))) %>%
         select(DTXSID,
                Category,
                exp.pathway,
-               output.variable = paste0(output.variable[i]))
+               output.variables = paste0(output.variables[i]))
       puc.path.data<-rbind(puc.path.data,expframe)
-      cat(paste0("\n data for pathway ", i, " of ", length(output.variable)), "\n")
+      cat(paste0("\n data for pathway ", i, " of ", length(output.variables)), "\n")
     }
 
   cat("\n Creating path puc boxplot...\n")
 
   theme_set(theme_bw())
   plot_exp_path<-ggplot(puc.path.data, aes(x=Category))+
-      geom_boxplot(aes(y=output.variable+1e-10))+
+      geom_boxplot(aes(y=output.variables+1e-10))+
       facet_grid(rows = vars(exp.pathway),
                  labeller = labeller(.rows = c("exp.dermal"= "exp.dermal (ug/day)", "exp.ingest"= "exp.ingest (ug/day)", "exp.inhal" = "exp.inhal (ug/m3)",
                                                "dose.inhal" = "dose.inhal (ug/day)", "f.dermal" = "f.dermal","f.ingest" = "f.ingest","f.inhal" = "f.inhal",
