@@ -1,0 +1,3 @@
+source.type,pucid,puc.desciption,formulation,product.id,variable,units,chemical,prevalence,gender,min.age,max.age,dist.type,par1,par2,par3,par4,l.trunc,u.trunc,resamp
+Food,15,Food; 15 Cereal Grains,form1,1,migration,ug/g,DTXSID9020112,0.8,B ,0,99,Point ,6,.,.,.,.,.,.
+Food,15,Food; 15 Cereal Grains,form1,1,residue,ug/g,DTXSID9020112,0.5,B ,0,99,uniform,2,4,.,.,.,.,.
