@@ -1,0 +1,70 @@
+source.type,pucid,form,description,indoor,dietary,migration,dirderm,diringest,dirinhvap,downthedrain,indir.fug,indir.y0
+Food,10B,form1,Lemon/Lime,1,1,0,0,0,0,0,0,0
+Food,11,form1,Pome Fruits,1,1,0,0,0,0,0,0,0
+Food,15,form1,Cereal Grains,1,1,0,0,0,0,0,0,0
+Food,19A,form1,Herbs,1,1,0,0,0,0,0,0,0
+Food,19B,form1,Spices,1,1,0,0,0,0,0,0,0
+Food,1A,form1,Root Vegetables,1,1,0,0,0,0,0,0,0
+Food,20A,form1,Rapeseed,1,1,0,0,0,0,0,0,0
+Food,20B,form1,Sunflower,1,1,0,0,0,0,0,0,0
+Food,20C,form1,Cottonseed,1,1,0,0,0,0,0,0,0
+Food,23A,form1,"Tropical and Subtropical, Small Fruit, Edible Peel",1,1,0,0,0,0,0,0,0
+Food,36,form1,Milk,1,1,0,0,0,0,0,0,0
+Food,3A,form1,Garlic/Onion,1,1,0,0,0,0,0,0,0
+Food,40,form1,Chicken,1,1,0,0,0,0,0,0,0
+Food,6,form1,Legume Vegetables (Succulent or Dried),1,1,0,0,0,0,0,0,0
+Food,6C,form1,Dried Shelled Pea/Bean (except soybean),1,1,0,0,0,0,0,0,0
+Food,70,form1,Egg,1,1,0,0,0,0,0,0,0
+Food,86A,form1,Direct Water,1,1,0,0,0,0,0,0,0
+Food,86B,form1,Indirect Water,1,1,0,0,0,0,0,0,0
+Food,8BC,form1,NA,1,1,0,0,0,0,0,0,0
+Food,O,form1,Other,1,1,0,0,0,0,0,0,0
+Food,NA,form1,NA,1,1,0,0,0,0,0,0,0
+Food,10A,form1,Orange,1,1,0,0,0,0,0,0,0
+Food,10C,form1,Grapefruit,1,1,0,0,0,0,0,0,0
+Food,12A,form1,Cherry,1,1,0,0,0,0,0,0,0
+Food,12B,form1,Apricot/Peach,1,1,0,0,0,0,0,0,0
+Food,13A,form1,Berries: Caneberry,1,1,0,0,0,0,0,0,0
+Food,13B,form1,Berries: Bushberry,1,1,0,0,0,0,0,0,0
+Food,13DF,form1,NA,1,1,0,0,0,0,0,0,0
+Food,13G,form1,Berries: Low growing berry,1,1,0,0,0,0,0,0,0
+Food,13GH,form1,NA,1,1,0,0,0,0,0,0,0
+Food,14,form1,Tree Nuts,1,1,0,0,0,0,0,0,0
+Food,1C,form1,Tuberous and Corm Vegetables,1,1,0,0,0,0,0,0,0
+Food,1CD,form1,NA,1,1,0,0,0,0,0,0,0
+Food,24B,form1,"Tropical and Subtropical, Medium to Large Fruit, Smooth, Inedible Peel",1,1,0,0,0,0,0,0,0
+Food,24C,form1,"Tropical and Subtropical, Medium to Large Fruit, Rough or Hairy, Inedible Peel",1,1,0,0,0,0,0,0,0
+Food,24E,form1,"Tropical and Subtropical, Inedible Peel, Vine",1,1,0,0,0,0,0,0,0
+Food,8A,form1,Tomato,1,1,0,0,0,0,0,0,0
+Food,22B,form1,Leafy Petiole Vegetables,1,1,0,0,0,0,0,0,0
+Food,31,form1,Beef,1,1,0,0,0,0,0,0,0
+Food,34,form1,Pork,1,1,0,0,0,0,0,0,0
+Food,4A,form1,Leafy Greens,1,1,0,0,0,0,0,0,0
+Food,1AB,form1,NA,1,1,0,0,0,0,0,0,0
+Food,5,form1,Brassica Head and Stem Vegetables,1,1,0,0,0,0,0,0,0
+Food,50,form1,Turkey,1,1,0,0,0,0,0,0,0
+Food,8B,form1,Bell Pepper,1,1,0,0,0,0,0,0,0
+Food,9B,form1,Squash/Cucumbers,1,1,0,0,0,0,0,0,0
+Food,6A,form1,Edible-pod Legume Vegetables,1,1,0,0,0,0,0,0,0
+Food,6B,form1,Succulent shelled peas and beans,1,1,0,0,0,0,0,0,0
+Food,2,form1,Leaves of Root and Tuber Vegetables,1,1,0,0,0,0,0,0,0
+Food,21,form1,Mushroom,1,1,0,0,0,0,0,0,0
+Food,22A,form1,Stalk and Stem Vegetables,1,1,0,0,0,0,0,0,0
+Food,3B,form1,Other Bulb Vegetables,1,1,0,0,0,0,0,0,0
+Food,4B,form1,Brassica Leafy Greens,1,1,0,0,0,0,0,0,0
+Food,80,form1,Fish,1,1,0,0,0,0,0,0,0
+Food,37,form1,"Milk, Human",1,1,0,0,0,0,0,0,0
+Food,9A,form1,Melons,1,1,0,0,0,0,0,0,0
+Food,35,form1,Sheep,1,1,0,0,0,0,0,0,0
+Food,18,form1,Non-grass animal feeds,1,1,0,0,0,0,0,0,0
+Food,23B,form1,"Tropical and Subtropical, Medium to Large Fruit, Edible Peel",1,1,0,0,0,0,0,0,0
+Food,13DE,form1,NA,1,1,0,0,0,0,0,0,0
+Food,12C,form1,Plum,1,1,0,0,0,0,0,0,0
+Food,23C,form1,"Tropical and Subtropical Palm Fruit, Edible Peel",1,1,0,0,0,0,0,0,0
+Food,60,form1,Poultry (other),1,1,0,0,0,0,0,0,0
+Food,38,form1,Game,1,1,0,0,0,0,0,0,0
+Food,32,form1,Goat,1,1,0,0,0,0,0,0,0
+Food,24A,form1,"Tropical and Subtropical, Small Fruit, Inedible Peel",1,1,0,0,0,0,0,0,0
+Food,13BDEF,form1,NA,1,1,0,0,0,0,0,0,0
+Food,39,form1,Rabbit,1,1,0,0,0,0,0,0,0
+Food,13C,form1,Berries: Large Shrub/tree berry,1,1,0,0,0,0,0,0,0
